@@ -1,6 +1,6 @@
 {
-  "name": "smooth-doc-starter",
-  "version": "0.0.0",
+  "name": "truemark-handbook",
+  "version": "0.0.1",
   "private": true,
   "scripts": {
     "develop": "gatsby develop",
