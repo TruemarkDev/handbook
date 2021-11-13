@@ -1,0 +1,85 @@
+---
+title: Merge Requests
+section: Guidelines
+order: 4
+---
+
+# Merge Requests Guidelines
+
+Everything you need to know about creating a merge request and everything that follows afterwards.
+
+## Creating a merge request
+
+When you are creating any new merge request, this is a template we prefer at Truemark because this gives the basic overview to the reviewer of what they are going to review in your merge request.
+
+### MD Format
+
+```md
+Trello
+---
+
+(PR for only one card/ticket?)
+Add link of the card you are implementing
+
+(Multiple cards/tickets?)
+
+- Add links to the card/ticket as a list
+- This is a link to the second card/ticket
+- This is a link to the third card/ticket
+
+_NOTE_: It’s very rare to implement features from multiple cards in a single Merge Request
+
+Tasks
+---
+
+1. Implement responsive designs of Sign in page
+2. Add validations to email and password
+3. Add redux related code to make API calls
+4. Keep adding tasks if more
+
+TODO
+---
+
+(if merge request is a work in progress, you need to add a list of what's left to implement)
+
+1. Make login page functional
+2. Keep adding tasks if more
+
+Screenshots
+---
+
+(If merge request has UI changes, then it must always be accompanied by screenshots of UI)
+
+1. Login page in Desktop
+
+Screenshot
+
+2. Login page in mobile
+
+Screenshot
+
+```
+
+### Preview
+
+This is what you will see when you click on the Preview button
+
+![Preview 1](../../../images/guidelines/merge-requests/md-preview-1.png 'Markdown Preview 1')
+![Preview 2](../../../images/guidelines/merge-requests/md-preview-2.png 'Markdown Preview 2')
+
+## After creating a merge request
+
+### As a reviewee (you created the merge request)
+As soon as you create a merge request, you should be doing the following things:
+
+1. Review code changes in the merge request so that you can fix issues if you find any
+2. Ask peer or supervisors to review your merge request
+3. Keep an eye on your email when merge requests are reviewed and you are asked to update code
+4. Answer questions in the reviewed code if any
+5. Update code if required after the code has been reviewed
+
+## As a reviewer
+
+1. Be nice and friendly
+2. Don't comment on people's code, comment only on code! Purpose of code review is to have a friendly discussion than trying to show what you know and what you want the reviewee to do E.g. "Code could be better if proper formatting was added through prettier" to "You should add prettier, this code isn't looking good!"
+3. Give proper coding examples wherever applicable.
