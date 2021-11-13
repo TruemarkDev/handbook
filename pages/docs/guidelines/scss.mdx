@@ -1,0 +1,589 @@
+---
+title: Scss
+section: Guidelines
+order: 3
+---
+
+# SCSS GUIDELINES
+
+## Project Structure
+
+If you are working with any frontend project built at Truemark Technology, you have a good change that you will see the folder sructure we are about to describe below already setup.
+
+TODO: We plan to write script to generate the folder structure
+
+### 7-1 pattern
+
+7 folders 1 file
+In this pattern, there are 7 folders and 1 main file that imports files from all folders.
+
+#### base/
+
+`_base.scss`
+Contains default rules and standard styles for commonly used HTML elements 
+`_reset.scss`
+CSS rules that resets the styling of all HTML elements to a consistent baseline
+`_typography.scss`
+fonts and texts styles
+
+Note: If your project uses a lot of CSS animations, you might consider adding an \_animations.scss file in there containing the @keyframesdefinitions of all your animations. If you only use them sporadically, let them live along the selectors that use them
+
+#### components/
+
+`components/` is more focused on widgets
+
+They are the reusable, modular parts of our design.
+
+Examples:
+
+- `_button.scss`
+- `_carousel.scss`
+- `_thumbnails.scss`
+
+Note: The components/ folder might also be called modules/
+
+#### layout/
+
+Layout rules divide the page into sections. Layouts hold one or more components together.
+This folder could have stylesheets for the main parts of the site (header, footer, navigation, sidebar…), the grid system or even CSS styles for all the forms.
+```
+_grid.scss
+_header.scss
+_footer.scss
+_sidebar.scss
+_forms.scss
+_navigation.scss
+```
+
+Note: The `layout/` folder might also be called `partials/`
+
+#### pages/
+
+If you have page-specific styles, it is better to put them in a pages/ folder, in a file named after the page.
+
+_home.scss
+_contact.scss
+
+#### themes/
+
+On large sites and applications, it is not unusual to have different themes.
+
+_theme.scss
+_admin.scss
+_default.scss
+
+When having several themes, this file contains everything related to the default one.
+
+Note: This is very project-specific and is likely to be non-existent on many projects.
+
+#### abstracts/
+
+The abstracts/ folder gathers all Sass tools and helpers used across the project. Every global variable, function, mixin and placeholder should be put in here.
+
+`_variables.scss`
+[_mixins.scss](https://sass-guidelin.es/#mixins)
+[_functions.scss](https://vanseodesign.com/css/custom-sass-functions/) 
+[_placeholders.scss](http://thesassway.com/intermediate/understanding-placeholder-selectors) 
+
+Note: The abstracts/ folder might also be called utilities/ or helpers/
+
+#### vendors/
+
+`vendors/` folder contain all the CSS files from external libraries and frameworks – Normalize, Bootstrap, jQueryUI, and so on.
+`_normalize.scss`
+`_bootstrap.scss`
+`_jquery-ui.scss`
+
+Note: If you have to override a section of any vendor, I recommend you have an 8th folder called `vendors-extensions/` in which you may have files named exactly after the vendors they overwrite.
+For instance, `vendors-extensions/_bootstrap.scss` is a file containing all CSS rules intended to re-declare some of Bootstrap’s default CSS. This is to avoid editing the vendor files themselves, which is generally not a good idea.
+
+`main.scss`
+The main file (usually labelled main.scss) should be the only Sass file from the whole code base not to begin with an underscore. This file should not contain anything but @import and comments.
+Files should be imported according to the folder they live in, one after the other in the following order:
+```
+abstracts/
+vendors/
+base/
+layout/
+components/
+pages/
+themes/
+```
+main.css guidelines 
+In order to preserve readability, the main file should respect these guidelines:
+one file per @import;
+one @import per line;
+no new line between two imports from the same folder;
+a new line after the last import from a folder;
+file extensions and leading underscores omitted.
+
+Example:
+```
+@import 'abstracts/variables';
+@import 'abstracts/functions';
+@import 'abstracts/mixins';
+@import 'abstracts/placeholders';
+
+@import 'vendors/bootstrap';
+@import 'vendors/jquery-ui';
+
+@import 'base/reset';
+@import 'base/typography';
+
+@import 'layout/navigation';
+@import 'layout/grid';
+@import 'layout/header';
+@import 'layout/footer';
+@import 'layout/sidebar';
+@import 'layout/forms';
+
+@import 'components/buttons';
+@import 'components/carousel';
+@import 'components/cover';
+@import 'components/dropdown';
+
+@import 'pages/home';
+@import 'pages/contact';
+
+@import 'themes/theme';
+@import 'themes/admin';
+```
+
+Syntax and Formatting
+Reference: 
+<https://sass-guidelin.es/#syntax--formatting>
+<https://cssguidelin.es/#syntax-and-formatting>
+
+## Formatting
+### Place `@extends` and `@includes` at the top of your declaration list.
+```
+.weather {
+  @extend %module; 
+  @include transition(all 0.3s ease-out);
+  ...
+}
+```
+
+### Use one space between property and value
+```
+//Yep
+width: 20px
+//Nope
+width:20px
+```
+
+### Avoid using shorthand properties for only one value: 
+```
+//Yep
+background-color: #ff0000;
+
+//Nope
+background: #ff0000;
+```
+
+### Use one space between selector and  {
+### Use only lowercase for declarations
+### Use space around operands 
+```
+//Yep
+$variable * 1.5
+
+//Nope
+$variable*1.5
+```
+### Avoid in-line operations in shorthand declarations. But, if it is necessary then use parentheses around individual operations
+```
+//Yep
+padding: ($variable * 1.5) ($variable * 2);
+
+//Nope
+padding: $variable * 1.5 variable * 2
+```
+
+### two (2) spaces indents, no tabs;
+###ideally, 80-characters wide lines;
+Where possible, limit CSS files’ width to 80 characters. Reasons for this include
+the ability to have multiple files open side by side;
+viewing CSS on sites like GitHub, or in terminal windows;
+providing a comfortable line length for comments.
+
+There will be unavoidable exceptions to this rule—such as URLs, or gradient syntax—which shouldn’t be worried about.
+
+Example:
+```
+/**
+ * I am a long-form comment. I describe, in detail, the CSS that follows. I am
+ * such a long comment that I easily break the 80 character limit, so I am
+ * broken across several lines.
+ */
+```
+
+### meaningful use of whitespace.
+### properly written multi-line CSS rules;
+Formatting Example: 
+```
+// Yep
+.foo {
+  display: block;
+  overflow: hidden;
+  padding: 0 1em;
+}
+
+// Nope
+.foo {
+    display: block; overflow: hidden;
+
+    padding: 0 1em;
+}
+```
+
+## Syntax
+### Strings
+#### Encoding
+To avoid any potential issue with character encoding, it is highly recommended to force UTF-8 encoding in the main stylesheet using the @charset directive. Make sure it is the very first element of the stylesheet and there is no character of any kind before it.
+Example: 
+`@charset 'utf-8';`
+
+#### Quotes
+Strings containing quotes
+If a string contains one or several single quotes, one might consider wrapping the string with double quotes (") instead, in order to avoid escaping characters within the string.
+Example:
+```
+// Okay
+@warn 'You can\'t do that.';
+
+// Okay
+@warn "You can't do that.";
+
+URL
+URLs should be quoted as well.
+Example:
+
+// Yep
+.foo {
+  background-image: url('/images/kittens.jpg');
+}
+
+// Nope
+.foo {
+  background-image: url(/images/kittens.jpg);
+}
+```
+### Numbers
+#### Zeros
+Numbers should display leading zeros before a decimal value less than one. 
+Never display trailing zeros.
+Example:
+```
+// Yep
+.foo {
+  padding: 2em;
+  opacity: 0.5;
+}
+
+// Nope
+.foo {
+  padding: 2.0em;
+  opacity: .5;
+}
+```
+
+#### Units
+0 value should never ever have a unit.
+Example:
+```
+// Yep
+$length: 0;
+
+// Nope
+$length: 0em;
+```
+	
+To add a unit to a number, you have to multiply this number by 1 unit. Unit should never be appended to numbers 
+Example:
+```
+$value: 42;
+
+// Yep
+$length: $value * 1px;
+
+// Nope 
+//unit should not be appended to number
+$length: $value + px;
+```
+To remove the unit of a value, you have to divide it by one unit of its kind.
+Example
+```
+$length: 42px;
+
+// Yep
+$value: $length / 1px;
+
+// Nope
+$value: str-slice($length + unquote(''), 1, 2);
+```
+
+Appending a unit as a string to a number results in a string, preventing any additional operation on the value.
+Reference: <https://hugogiraudel.com/2013/09/03/use-lengths-not-strings/> 
+
+Calculations
+Numeric calculations should always be wrapped in parentheses
+Example:
+```
+// Yep
+.foo {
+  width: (100% / 3);
+}
+
+// Nope
+.foo {
+  width: 100% / 3;
+}
+```
+
+#### Magic Numbers
+“Magic number” is an old school programming term for unnamed numerical constant. Basically, it’s just a random number that happens to just work yet is not tied to any logical explanation.
+Needless to say magic numbers are a plague and should be avoided at all costs. When you cannot manage to find a reasonable explanation for why a number works, add an extensive comment explaining how you got there and why you think it works. Admitting you don’t know why something works is still more helpful to the next developer than them having to figure out what’s going on from scratch.
+Detail and extensive example: <https://css-tricks.com/magic-numbers-in-css/> 
+
+### Colors
+#### Color Formats
+- Never use color keywords like grey, white, black.
+- Use Hexadecimal notation for color formats 
+- Always use lowercase
+Example:
+```
+// Yep
+.foo {
+  color: #f00;
+}
+
+// Nope
+.foo {
+  color: #FF0000;
+}
+
+// Nope
+.foo {
+  color: red;
+}
+```
+#### Colors and Variables
+Reference: <https://davidwalsh.name/sass-color-variables-dont-suck> 
+When using a color more than once, store it in a variable with a meaningful name representing the color.
+
+`$sass-pink: #b93a32;`
+
+Now you are free to use this variable wherever you want. However, if your usage is strongly tied to a theme, I would advise against using the variable as is. Instead, store it in another variable with a name explaining how it should be used.
+
+`$main-theme-color: $sass-pink;`
+
+Doing this would prevent a theme change leading to something like $sass-pink: blue.
+
+### Lists
+Reference: https://hugogiraudel.com/2013/07/15/understanding-sass-lists/ 
+Lists are the Sass equivalent of arrays. A list is a flat data structure intended to store values of any type (including lists, leading to nested lists).
+Lists should respect the following guidelines:
+either inlined or multilines;
+necessarily on multilines if too long to fit on an 80-character line;
+unless used as is for CSS purposes, always comma separated;
+always wrapped in parenthesis;
+trailing comma if multilines, not if inlined.
+```
+// Yep
+$font-stack: ('Helvetica', 'Arial', sans-serif);
+
+// Yep
+$font-stack: (
+  'Helvetica',
+  'Arial',
+  sans-serif,
+);
+
+// Nope
+$font-stack: 'Helvetica' 'Arial' sans-serif;
+
+// Nope
+$font-stack: 'Helvetica', 'Arial', sans-serif;
+
+// Nope
+$font-stack: ('Helvetica', 'Arial', sans-serif,);
+```
+
+#### When adding new items to a list, always use the provided API. Do not attempt to add new items manually.
+```
+$shadows: (0 42px 13.37px hotpink);
+
+// Yep
+$shadows: append($shadows, $shadow, comma);
+
+// Nope
+$shadows: $shadows, $shadow;
+```
+### Maps
+A map is a data structure associating keys to values. Both keys and values can be of any data type
+Maps should be written as follows:
+space after the colon (:);
+opening brace (() on the same line as the colon (:);
+quoted keys if they are strings (which represents 99% of the cases);
+each key/value pair on its own new line;
+comma (,) at the end of each key/value;
+trailing comma (,) on last item to make it easier to add, remove or reorder items;
+closing brace ()) on its own new line;
+no space or new line between closing brace ()) and semi-colon (;).
+Example:
+```
+// Yep
+$breakpoints: (
+  'small': 767px,
+  'medium': 992px,
+  'large': 1200px,
+);
+
+// Nope
+$breakpoints: ( small: 767px, medium: 992px, large: 1200px );
+```
+Further Reading:
+<https://www.sitepoint.com/using-sass-maps/>
+<https://www.sitepoint.com/extra-map-functions-sass/> 
+<http://blog.grayghostvisuals.com/sass/real-sass-real-maps/>
+
+### CSS Ruleset
+CSS ruleset should be written as follows as per https://cssguidelin.es/#anatomy-of-a-ruleset :
+related selectors on the same line; unrelated selectors on new lines;
+the opening brace ({) spaced from the last selector by a single space;
+each declaration on its own new line;
+a space after the colon (:);
+a trailing semi-colon (;) at the end of all declarations;
+the closing brace (}) on its own new line;
+a new line after the closing brace }.
+Example:
+```
+// Yep
+.foo, .foo-bar,
+.baz {
+  display: block;
+  overflow: hidden;
+  margin: 0 auto;
+}
+
+// Nope
+.foo,
+.foo-bar, .baz {
+    display: block;
+    overflow: hidden;
+    margin: 0 auto }
+```
+
+Adding to those CSS-related guidelines, we want to pay attention to:
+local variables being declared before any declarations, then spaced from declarations by a new line;
+mixin calls with no @content coming before any declaration;
+nested selectors always coming after a new line;
+mixin calls with @content coming after any nested selector;
+no new line before a closing brace (}).
+Example:
+
+```
+.foo, .foo-bar,
+.baz {
+  $length: 42em;
+
+  @include ellipsis;
+  @include size($length);
+  display: block;
+  overflow: hidden;
+  margin: 0 auto;
+
+  &:hover {
+    color: red;
+  }
+
+  @include respond-to('small') {
+    overflow: visible;
+  }
+}
+```
+### Selector Nesting
+Selector nesting ultimately makes code more difficult to read. One has to mentally compute the resulting selector out of the indentation levels; it is not always quite obvious what the CSS will end up being.
+Don’t nest more than 3 levels deep
+#### Exceptions
+It is allowed and even recommended to nest pseudo-classes and pseudo-elements within the initial selector.
+Using selector nesting for pseudo-classes and pseudo-elements not only makes sense (because it deals with closely related selectors), it also helps keep everything about a component at the same place.
+```
+.foo {
+  color: red;
+
+  &:hover {
+    color: green;
+  }
+
+  &::before {
+    content: 'pseudo-element';
+  }
+}
+```
+when using component-agnostic state classes such as .is-active, it is perfectly fine to nest it under the component’s selector to keep things tidy.
+
+```
+.foo {
+  // …
+
+  &.is-active {
+    font-weight: bold;
+  }
+}
+```
+
+when styling an element because it happens to be contained within another specific element, it is also fine to use nesting to keep everything about the component at the same place.
+
+```
+.foo {
+  // …
+
+  .no-opacity & {
+    display: none;
+  }
+}
+```
+
+Further Reading:
+<https://www.sitepoint.com/beware-selector-nesting-sass/> 
+<http://thesassway.com/intermediate/avoid-nested-selectors-for-more-modular-css> 
+<http://thesassway.com/beginner/the-inception-rule>
+
+## Naming Conventions
+- All strings in classes are delimited with a hyphen (-)
+- Camel case and underscores should not be used for classes
+
+Example:
+```
+//Yep
+.page-head { }
+
+//Yep
+.sub-content { }
+
+//Camel case should not be used
+.pageHead { }
+
+//underscore should not be used
+.sub_content { }
+```
+
+## Javascript Hooks
+As a rule, it is unwise to bind your CSS and your JS onto the same class in your HTML. This is because doing so means you can’t have (or remove) one without (removing) the other. It is much cleaner, much more transparent, and much more maintainable to bind your JS to specific classes.
+
+Example:
+
+```
+//btn is prepended and written as js-btn when using in JS
+<input type="submit" class="btn  js-btn" value="Follow" />
+```
+
+## References
+
+- [Adapted from 7-1 Pattern](https://sass-guidelin.es/#the-7-1-pattern)
+- [Follow this link For naming convention follow](http://thesassway.com/advanced/modular-css-naming-conventions)
+- [Further Reading:](https://css-tricks.com/sass-style-guide/)
+- [Sass Functions](http://sass-lang.com/documentation/Sass/Script/Functions.html)
+

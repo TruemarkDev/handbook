@@ -1,0 +1,43 @@
+---
+title: Folder Structure
+section: Guidelines
+order: 1
+---
+
+# Folder Structure Guidelines
+
+Folder structure we use in Truemark per programming language.
+
+## ReactJS
+
+1. Name of root folders should be in camelCase
+
+![camelCase](../../../images/guidelines/folder-structure/react-js/camelcase.png 'Camel Case')
+    
+2. Name of files and folders inside `src/components`, `src/containers`, `src/pages` should be in PascalCase.
+
+![Components](../../../images/guidelines/folder-structure/react-js/components.png 'Components')
+
+![Containers](../../../images/guidelines/folder-structure/react-js/containers.png 'Containers')
+
+![Pages](../../../images/guidelines/folder-structure/react-js/pages.png 'Pages')
+
+3. Name of other files and folders (components, containers, pages excluded) should be in camelCase.
+
+![Folders](../../../images/guidelines/folder-structure/react-js/camelcase-folders.png 'Pages')
+
+![Files](../../../images/guidelines/folder-structure/react-js/camelcase-files.png 'Files')
+    
+### Git commit Rules
+
+Git commit rules should follow following structure:
+
+[PC-NUM] / [TASK TITLE]
+* Task description
+- Task 1 done
+- Fix task 2
+
+![GitCommitRule](../../../images/guidelines/folder-structure/react-js/git-commit-rule.png 'Git Commit Rule')
+
+Here “TEC” is project code (Abbreviated for Truemark E-commerce), “25” is the card number (from jira or trello) for the current task and “checkout-flow-page” is task name in short.
+As a whole “TEC-25/checkout-flow-page” becomes a branch name.
