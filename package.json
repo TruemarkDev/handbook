@@ -14,6 +14,7 @@
     "smooth-doc": "^8.1.0"
   },
   "engines": {
-    "node": "16.x"
+    "node": "16.x",
+    "npm": "^8.1.3"
   }
 }
