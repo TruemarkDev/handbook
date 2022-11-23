@@ -1,16 +1,16 @@
 ---
-title: React Library
+title: ReactJS
 section: Guidelines
 order: 2
 ---
 
-# ReactJS Standard Packages
+# ReactJS
 
-These are the standard packages we use daily at Truemark Technology and for every react project, we are working on. So, being familiar with these packages might help developers with efficient development.
+## Standard Packages
 
-TODO: We plan to get insights into different packages used for ReactJS development and how to install those to our projects.
+Here, we plan to get insights into different packages used for ReactJS development and how to install those to our projects.
 
-## Design
+### Design
 
 While working on any front-end project at Truemark, you will use bootstrap for design purposes. Bootstrap covers a wide range of CSS properties and helps from laying out the design to providing margin and padding to elements.
 
@@ -30,6 +30,92 @@ yarn add bootstrap
 
 Find the npm package and github link below:
 
-[npm package](https://www.npmjs.com/package/bootstrap)
+NPM Package: [bootstrap npm package](https://www.npmjs.com/package/bootstrap)
 
-[github repo](https://github.com/twbs/bootstrap)
+GitHub Repo: [bootstrap github repo](https://github.com/twbs/bootstrap)
+
+### Datepicker
+
+Selecting a date in any frontend project with an existing "date" HTML tag can be easy to apply but hard to handle when it comes to localization in international projects. So, we use the "react-datepicker" package for all our date-related stuff at Truemark. It is a simple and reusable React component that can be used in setting the date format by localizing it with the country code needed.
+
+This package can be added to any project using npm or yarn.
+
+Installing react-datepicker using `npm`
+
+```
+npm install react-datepicker --save
+```
+
+Installing react-datepicker using `yarn`
+
+```
+yarn add react-datepicker
+```
+
+Find the npm package and github link below:
+
+NPM Package: [react-datepicker npm package](https://www.npmjs.com/package/react-datepicker)
+
+GitHub Repo: [react-datepicker github repo](https://github.com/Hacker0x01/react-datepicker)
+
+You can also see demo for react-datepicker: [react-datepicker-demo](https://reactdatepicker.com/)
+
+### Form Management
+
+Managing forms with custom code and validity can easily become cumbersome for developers. Therefore, at Truemark, we use "react-final-form" which is easy to customize highly performant form management tool which supports different validations that are easy to incorporate into the project.
+
+react-final-form can be added to any project using npm or yarn.
+
+Installing react-final-form using `npm`
+
+```
+npm install --save final-form react-final-form
+```
+
+Installing react-final-form using `yarn`
+
+```
+yarn add final-form react-final-form
+```
+
+Find the npm package and github link below:
+
+NPM Package: [react-final-form npm package](https://www.npmjs.com/package/react-final-form)
+
+GitHub Repo: [react-final-form github repo](https://github.com/final-form/react-final-form)
+
+## Folder Structure
+
+1. Name of root folders should be in camelCase
+
+![camelCase](../../../images/guidelines/folder-structure/react-js/camelcase.png "Camel Case")
+
+2. Name of files and folders inside `src/components`, `src/containers`, `src/pages` should be in PascalCase.
+
+![Components](../../../images/guidelines/folder-structure/react-js/components.png "Components")
+
+![Containers](../../../images/guidelines/folder-structure/react-js/containers.png "Containers")
+
+![Pages](../../../images/guidelines/folder-structure/react-js/pages.png "Pages")
+
+3. Name of other files and folders (components, containers, pages excluded) should be in camelCase.
+
+![Folders](../../../images/guidelines/folder-structure/react-js/camelcase-folders.png "Pages")
+
+![Files](../../../images/guidelines/folder-structure/react-js/camelcase-files.png "Files")
+
+### Git commit Rules
+
+Git commit rules should follow following structure:
+
+[PC-NUM] / [TASK TITLE]
+
+- Task description
+
+* Task 1 done
+* Fix task 2
+
+![GitCommitRule](../../../images/guidelines/folder-structure/react-js/git-commit-rule.png "Git Commit Rule")
+
+Here “TEC” is project code (Abbreviated for Truemark E-commerce), “25” is the card number (from jira or trello) for the current task and “checkout-flow-page” is task name in short.
+As a whole “TEC-25/checkout-flow-page” becomes a branch name.
