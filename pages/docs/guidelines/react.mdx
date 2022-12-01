@@ -304,6 +304,38 @@ NPM Package: [stylelint npm package](https://www.npmjs.com/package/stylelint)
 
 GitHub Repository: [stylelint github repo](https://github.com/stylelint/stylelint)
 
+### Automated Review
+
+As discussed above, working effectively and efficiently in a team can only be achieved by setting some standards while writing code, but reviewing if the standards are applied or not manually can be overwhelming for any developer out there. So, we need an automated tool to do this work for us. Automated review tools help us to maintain the standards while writing code which might further helps in avoiding fatal security threats and bugs in our source code. Basically, automated review tools go through our source code to find if standards are maintained while writing the code. Let's discuss about the automated review tools we use at Truemark.
+
+#### Husky
+
+What if we can apply all the standards mentioned for writing code while committing the code in git? Wouldn't it be better and hassle-free? Yes, it would be a lot less stressful and as a developer, we can write the code in our manner and structure as it will be formatted and checked while committing. There is a tool that can help us with it - Husky. Husky can be used with [Git Hooks](https://git-scm.com/book/en/v2/Customizing-Git-Git-Hooks) to maintain the script we write in various stages of git commands.
+
+Husky can be added to any project using npm or yarn.
+
+Installing husky using `npm`
+
+```
+npm i husky
+```
+
+Installing husky using `yarn`
+
+```
+yarn add husky
+```
+
+Find the npm package and github link below:
+
+NPM Package: [husky npm package](https://www.npmjs.com/package/husky)
+
+GitHub Repository: [husky github repo](https://github.com/typicode/husky)
+
+#### Review Dog
+
+We manage our codebase in the local environment but we can not always work in a team by working locally. So, we need to push our changes to the cloud, to be more specific - a code hosting service. Therefore, while we check for the standard and source code errors in the local environment, we can also check for the lack of coding standards while the code is hosted in the cloud using review dog.
+
 ## Folder Structure
 
 1. Name of root folders should be in camelCase
