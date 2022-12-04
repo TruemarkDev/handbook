@@ -334,7 +334,107 @@ GitHub Repository: [husky github repo](https://github.com/typicode/husky)
 
 #### Review Dog
 
-We manage our codebase in the local environment but we can not always work in a team by working locally. So, we need to push our changes to the cloud, to be more specific - a code hosting service. Therefore, while we check for the standard and source code errors in the local environment, we can also check for the lack of coding standards while the code is hosted in the cloud using review dog.
+Although husky is capable of maintaining all the standards in different git stages, it is always possible that some of the violations slip through it and make it to the code hosting providers via different Pull Requests(PR) created by developers. If there is a way to check for the standards even after the code is pushed, wouldn't it be better? For the same task, i.e. for checking the source code for potential violation of standards in code hosting sites, we use Review Dog. Review Dog does the work done by a husky in the local environment but in the cloud. It reviews the source code in the Pull Requests for violation of certain standards and reports it to the developer.
+
+For using Review Dog in any project, you can go through their github repository and always learn more about it:
+
+GitHub Repository: [review dog github repo](https://github.com/reviewdog/reviewdog)
+
+### Routing
+
+In modern web applications, there are many views that we need to display to users. Large applications contain many features and can need their own page to display those features. In other words, there are many views present in modern web applications and we need a way to identify those views uniquely. Therefore, for providing each page with its own identity, we require routes in the application. The route can provide any page in the application with its URL and helps users in identifying the page. So, here at Truemark, we use the react-router-dom package for handling all of the routings in the application.
+
+React Router DOM can be added to any project using npm or yarn.
+
+Installing react-router-dom using `npm`
+
+```
+npm i react-router-dom
+```
+
+Installing react-router-dom using `yarn`
+
+```
+yarn add react-router-dom
+```
+
+Find the npm package and github link below:
+
+NPM Package: [react-router-dom npm package](https://www.npmjs.com/package/react-router-dom)
+
+GitHub Repository: [react-router-dom github repo](https://github.com/remix-run/react-router)
+
+### JS Utility Library
+
+We use lodash as our go to JavaScript utility library as it makes working with arrays, objects, strings, numbers, etc. a lot easier. It is great while working with nested data whether it is in array or objects. Lodash also helps developer to write more clear and concise code while working with complex JS data structures where it is a lot harder to write bug free code.
+
+Lodash can be added to any project using npm or yarn.
+
+Installing lodash using `npm`
+
+```
+npm i lodash
+```
+
+Installing lodash using `yarn`
+
+```
+yarn add lodash
+```
+
+Find the npm package and github link below:
+
+NPM Package: [lodash npm package](https://www.npmjs.com/package/lodash)
+
+GitHub Repository: [lodash github repo](https://github.com/lodash/lodash)
+
+### Enriched Editor
+
+Whenever we need an editor for our web applications, we lean towards react-trix. React Trix is an enriched web text editor which contains all the required text elements to write the text for any purpose.
+
+React Trix can be added to any project using npm or yarn.
+
+Installing react-trix using `npm`
+
+```
+npm i react-trix
+```
+
+Installing react-trix using `yarn`
+
+```
+yarn add react-trix
+```
+
+Find the npm package and github link below:
+
+NPM Package: [react-trix npm package](https://www.npmjs.com/package/react-trix)
+
+GitHub Repository: [react-trix github repo](https://github.com/dstpierre/react-trix)
+
+### Drag and drop file upload
+
+There is always a case of adding files in the web applications, whether it is adding profile pictures or uploading files to the website. But we always tend to make a better user experience for users while dragging and dropping the files and it can be hard to customize the HTML's file input file. So, we use react-dropzone for all dragging and dropping file upload tasks. React dropzone provides us with additional functionalities like customizing the dropzone, displaying a preview for the uploaded file, and restricting file types and amounts while uploading.
+
+React dropzone can be added to any project using npm or yarn.
+
+Installing react-dropzone using `npm`
+
+```
+npm i react-dropzone
+```
+
+Installing react-dropzone using `yarn`
+
+```
+yarn add react-dropzone
+```
+
+Find the npm package and github link below:
+
+NPM Package: [react-dropzone npm package](https://www.npmjs.com/package/react-dropzone)
+
+GitHub Repository: [react-dropzone github repo](https://github.com/react-dropzone/react-dropzone)
 
 ## Folder Structure
 
