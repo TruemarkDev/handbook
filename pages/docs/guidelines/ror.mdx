@@ -1,0 +1,135 @@
+---
+title: Ruby on Rails
+section: Guidelines
+order: 2
+---
+
+# Ruby on Rails
+
+## Standard Gems
+
+Here, we plan to get insights into different gems used for Ruby on Rails application development phase, testing phase and user interface (UI) changes along with the installation process to add those gems into our projects.
+
+### Development
+
+While developing a rails application at Truemark, we place great emphasis on user authentication and authorization so we prefer using the following modules to ensure the preceding conditions are met.
+
+#### Devise
+
+Devise is a flexible authentication module for Rails with Warden. It is a rack based MVC solution composed of multiple modules which can be signed into or added to our projects based on the use cases.
+
+Devise can be added to any project by either executing the global install command or adding the devise gem in the gemfile.
+
+To `global install` devise
+
+```
+gem install devise
+```
+
+To add the module in the `gemfile`
+
+```
+gem 'devise', '~> 4.8', '>= 4.8.1'
+```
+
+The aforementioned devise version is subject to change so please find the official devise gem and github link below for latest version:
+
+Official Documentation: [devise docs](https://github.com/heartcombo/devise)
+
+Rubygems: [devise gem](https://rubygems.org/gems/devise)
+
+#### Devise::JWT
+
+Devise::JWT is the devise extension which uses `JWT` tokens for user authentication with configurable token revocation strategies.
+
+This gem can also be added to any rails project by either executing the global install command or adding the devise gem in the gemfile.
+
+To `global install` devise
+
+```
+gem install devise-jwt
+```
+
+To add the module in the `gemfile`
+
+```
+gem 'devise-jwt', '~> 0.10.0'
+```
+
+The aforementioned devise-jwt version is subject to change so please find the official devise-jwt gem and github link below for latest version:
+
+Official Documentation: [devise-jwt docs](https://github.com/waiting-for-dev/devise-jwt)
+
+Rubygems: [devise-jwt gem](https://rubygems.org/gems/devise-jwt)
+
+#### Doorkeeper
+
+Doorkeeper is an `OAuth 2` provider gem for Rails and Grape application.
+
+This gem can be added to any rails project by either executing the global install command or adding the doorkeeper gem in the gemfile.
+
+To `global install` doorkeeper
+
+```
+gem install doorkeeper
+```
+
+To add the module in the `gemfile`
+
+```
+gem 'doorkeeper', '~> 5.6', '>= 5.6.2'
+```
+
+The aforementioned doorkeeper version is subject to change so please find the official doorkeeper gem and github link below for latest version:
+
+Official Documentation: [doorkeeper docs](https://github.com/doorkeeper-gem/doorkeeper)
+
+Rubygems: [doorkeeper gem](https://rubygems.org/gems/doorkeeper)
+
+#### Pundit
+
+When it comes to building an object oriented authorization for Rails applications, Pundit offers a set of helpers which guide you in leveraging regular Ruby classes and object oriented design patterns to build a robust and scalable authorization system.
+
+This gem can be added to any rails project by either executing the global install command or adding the pundit gem in the gemfile.
+
+To `global install` pundit
+
+```
+gem install pundit
+```
+
+To add the module in the `gemfile`
+
+```
+gem 'pundit', '~> 2.2'
+```
+
+The aforementioned pundit version is subject to change so please find the official pundit gem and github link below for latest version:
+
+Official Documentation: [pundit docs](https://github.com/varvet/pundit)
+
+Rubygems: [pundit gem](https://rubygems.org/gems/pundit)
+
+#### CanCanCan
+
+CanCanCan is a simple authorization solution for Rails which puts a constraint on what resources a given user is allowed to access. The permissions can be defined in one or multiple ability files and is not duplicated across controllers, views, and database queries, keeping the permissions logic in one place for easy maintenance and testing.
+
+This gem can be added to any rails project by either executing the global install command or adding the cancancan gem in the gemfile.
+
+To `global install` cancancan
+
+```
+gem install cancancan
+```
+
+To add the module in the `gemfile`
+
+```
+gem 'cancancan', '~> 3.4'
+```
+
+The aforementioned cancancan version is subject to change so please find the official cancancan gem and github link below for latest version:
+
+Official Documentation: [cancancan docs](https://github.com/CanCanCommunity/cancancan)
+
+Rubygems: [cancancan gem](https://rubygems.org/gems/cancancan)
