@@ -6,18 +6,59 @@ order: 3
 
 # GIT
 
-### Git commit Rules
+## GIT Branching Rules
 
-Git commit rules should follow following structure:
+Many developers work on different features, fixes, hot fixes and upgrades in a single project. If each developer started to name the branch according to their preference, it will be difficult to know what they have worked on and will become confusing while merging the branch to deploy into production. Therefore, some convention must be followed while naming the branch. So, to avoid the confusion and smooth project completion, we follow certain naming convention for our branch name here at Truemark.
 
-[PC] / [TRELLO CARD NUM-TASK TITLE]
+GIT branch name should follow following convention:
 
-- Task description
+```
+<COMMIT-TYPE>/<TICKET-NUMBER>/<FEATURE-TITLE>
+```
 
-* Task 1 done
-* Fix task 2
+Example for the git branch name:
 
-![GitCommitRule](../../../images/guidelines/folder-structure/react-js/git-commit-rule.png "Git Commit Rule")
+If you are working on a feature to add UI for rendering the list of users, you can name your branch as:
 
-Here “TEC” is project code (Abbreviated for Truemark E-commerce), “25” is the card number (from jira or trello) for the current task and “checkout-flow-page” is task name in short.
-As a whole “TEC-25/checkout-flow-page” becomes a branch name.
+```
+features/1256/list-users
+```
+
+Now after you are familiar with our convention of naming the branch and example for it, let's discuss the convention in brief below:
+
+**COMMIT-TYPE**
+
+There can be different commit types according to what type of code you are adding to the project.
+
+- If you are adding certain feature to the product, commit-type will be `features/`.
+- If you are working on fixing the bugs that might come after QA tests your code after the release, commit-type will be `fixes/`.
+- If you are working on fixing the bugs that are in production and require immediate fix, commit-type will be `hot-fixes/`.
+- If you are working on upgrading the app whenever newer version of framework is released or certain package you have used are upgraded, commit-type will be `upgrades/`.
+
+**TICKET-NUMBER**
+
+There is chance where multiple developers are working on the same feature or bug in a large project. Therefore, to distinguish and break down there tasks, we tend to use trello and jira for project management here at Truemark. Each jira or trello card has a ticket number or card number assigned to them and we use this card number while naming our branch so that project manager or other managers get insights upon the task whenever it is completed.
+
+We can find ticket number or card number inside jira and trello card assigned.
+
+Example Trello Card with card number:
+
+![trello card example](../../../images/guidelines/git/trello-card.jpg)
+
+Example Jira Card with card number:
+
+![jira card example](../../../images/guidelines/git/jira-card.jpg)
+
+**FEATURE TITLE**
+
+Feature title should be derived from the card you are working on. Sometimes it can be a bit long but generally it should be short yet clearly describe the feature/fixes that is being worked on.
+
+You should not use card title as it is as feature name but feature name should be short and descriptive.
+
+```
+// Bad
+features/1310/as-a-user-i-should-see-list-of-users-in-my-dashboard
+
+// Good
+features/1310/list-users-in-admin-dashboard
+```
