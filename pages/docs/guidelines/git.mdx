@@ -16,24 +16,16 @@ GIT branch name should follow following convention:
 <COMMIT-TYPE>/<TICKET-NUMBER>/<FEATURE-TITLE>
 ```
 
-Example for the git branch name:
-
-If you are working on a feature to add UI for rendering the list of users, you can name your branch as:
-
-```
-features/1256/list-users
-```
-
 Now after you are familiar with our convention of naming the branch and example for it, let's discuss the convention in brief below:
 
 **COMMIT-TYPE**
 
 There can be different commit types according to what type of code you are adding to the project.
 
-- If you are adding certain feature to the product, commit-type will be `features/`.
-- If you are working on fixing the bugs that might come after QA tests your code after the release, commit-type will be `fixes/`.
-- If you are working on fixing the bugs that are in production and require immediate fix, commit-type will be `hot-fixes/`.
-- If you are working on upgrading the app whenever newer version of framework is released or certain package you have used are upgraded, commit-type will be `upgrades/`.
+- If you are adding certain feature to the product, commit-type should be `features/`.
+- If you are working on fixing the bugs that might come after QA tests your code after the release, commit-type should be `fixes/`.
+- If you are working on fixing the bugs that are in production and require immediate fix, commit-type should be `hot-fixes/`.
+- If you are working on upgrading the app whenever newer version of framework is released or certain package you have used are upgraded, commit-type should be `upgrades/`.
 
 **TICKET-NUMBER**
 
@@ -53,12 +45,56 @@ Example Jira Card with card number:
 
 Feature title should be derived from the card you are working on. Sometimes it can be a bit long but generally it should be short yet clearly describe the feature/fixes that is being worked on.
 
-You should not use card title as it is as feature name but feature name should be short and descriptive.
+If you are working on a feature to add UI for rendering the list of users, you can name your branch as:
+
+```
+features/1256/list-users
+```
+
+### Examples
+
+Example for the git branch name:
+
+#### Bad Branch naming
+
+You should not use card title as it is as feature name.
 
 ```
 // Bad
 features/1310/as-a-user-i-should-see-list-of-users-in-my-dashboard
+```
 
+#### Good Branch naming
+
+You should use short and descriptive name for your branch which defines the commit type and task you are doing.
+
+```
 // Good
 features/1310/list-users-in-admin-dashboard
+```
+
+Now lets see example for each commit type:
+
+1.Features
+
+```
+features/770/filter-product-by-category
+```
+
+2.Fixes
+
+```
+fixes/1237/issue-while-updating-product-info
+```
+
+3. Hot Fixes
+
+```
+hot-fixes/1189/issue-while-signing-with-invalid-credentials
+```
+
+4. Upgrades
+
+```
+upgrades/789/upgrade-react-router-dom-to-v6
 ```
