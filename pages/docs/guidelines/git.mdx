@@ -35,11 +35,11 @@ We can find ticket number or card number inside Jira and Trello card assigned.
 
 Example Trello Card with card number:
 
-![Trello card example](../../../images/guidelines/git/Trello-card.jpg)
+![Trello card example](../../../images/guidelines/git/trello-card.jpg)
 
 Example Jira Card with card number:
 
-![Jira card example](../../../images/guidelines/git/Jira-card.jpg)
+![Jira card example](../../../images/guidelines/git/jira-card.jpg)
 
 **FEATURE TITLE**
 
@@ -72,3 +72,171 @@ You should use short and descriptive name for your branch which defines the comm
 // Good
 features/1310/list-users-in-admin-dashboard
 ```
+
+## Git Commit Rules
+
+Git commit messages should be descriptive and should always describe the changes done while working on the certain task. Changes indicates all the updates, deletion and addition done in the repository.
+
+It should follow the following convention while writing the commit message:
+
+```
+<COMMIT-TYPE>/<TICKET-NUMBER> - <FEATURE-TITLE>
+
+Tasks done
+---
+
+- Short description of task 1 done
+- Short description of task 2 done
+
+// and so on...
+```
+
+Commit title generally follows the Trello title or branch name. After providing enough information of commit to the feature, we should provide list of tasks performed in the particular commit.
+
+### Examples
+
+Example for the git commit rule:
+
+#### Bad Commit
+
+Let's look at the bad commit example and see how confusing it will become to understand it.
+
+```
+// Bad git commit
+
+git commit -m "searching functionality
+
+    - add input
+    - validate it
+"
+```
+
+From above commit message, were you able to figure out what is going on there? It says `searching functionality` as commit title, but in which task the developer is working on and in which project? and what are we searching here? persons? birds? or cars? We are in a confusion about what this commit says. Now, let's move on to another section of commit which is describing the tasks done. It says `add input` but what is the input for and what value does it get? Moving on to another task, it says `validate it` but which input is it validating? and what is it validating? So, analyzing the scenario, we can infer that we should always make our commit clear and concise. Many developers who work on legacy project need to have understanding about the codebase when they are working on upgrading, but these kind of commit messages make those developers confused and they cannot infer anything from these. So, for making our project and codebase future proof, we should have our commit messages clean and clear.
+
+#### Good Commit
+
+Now let's analyze how good commit helps us and our fellow developers in long run.
+
+```
+// Good git commit
+
+git commit -m "Features/129 - add input field for searching product
+
+Tasks done
+---
+    - add input field to search for products
+    - add empty value validation to search field
+"
+```
+
+Now, let's analyze the scenario again. The commit title `Features/129 - add input field for searching product` clearly explains that the developer is working on adding feature for searching product on the application and more information about the task can be viewed by visiting `129` card number assigned in either Trello, Jira or other project management tools which has feature to provide numbers to the card. And while analyzing the sub-tasks, first one says `add input field to search for product` which do not even need explanation as it is clear that developer has added a search field to search for product. Similarly, `add empty value validation to search field` describes that there was validation added which triggers when empty value is provided in search field. So, this implies that git commit messages are always great for us as well as for other developers to know about the work we had done while implementing certain feature.
+
+### Different scenarios for commit message
+
+We do not always make the commit when certain feature is completed but there are scenarios where we commit due to other reasons.
+
+#### Scenario 1 - When PR comments are resolved
+
+When we work on real world project, we work on certain feature to implement, then we send our branch for PR review where senior developer will review our code and provide comments over it if there are some issues in our code. Now, it is our responsibility to infer that this commit is done after resolving comments given in the PR. Now lets see an example for writing commit message after resolving the PR.
+
+```
+git commit -m "Features/132 Resolve PR comments
+
+Tasks done
+---
+
+    - Fixed grammatical typo inside the component <Alert />
+    - Fixed import structure for react packages inside component <Table />
+
+"
+```
+
+#### Scenario 2 - When there is merge conflicts
+
+Let's assume, you are working on certain feature to implement where you have worked on `ProductTable.js` file and another developer is working on another feature but has to do some changes in same `ProductTable.js` file. In this case, we can have merge conflicts as there is possibility that both of you have worked on the same line number. So, after resolving the conflict, you should push your changes to the same branch but we need to infer that there was merge conflicts and you have resolved it so that no any changes from both sides get lost. Now, lets see an example for writing commit message after resolving merge conflicts.
+
+```
+git commit -m "Features/569 Resolve merge conflict with develop branch
+
+Merge Conflicts in
+---
+    - src/components/Table.jsx
+    - src/views/User/List.jsx
+"
+```
+
+## Merge Requests Guidelines
+
+Everything you need to know about creating a merge request and everything that follows afterwards.
+
+### Creating a merge request
+
+When you are creating any new merge request, this is a template we prefer at Truemark because this gives the basic overview to the reviewer of what they are going to review in your merge request.
+
+#### MD Format
+
+```md
+## Trello
+
+(PR for only one card/ticket?)
+Add link of the card you are implementing
+
+(Multiple cards/tickets?)
+
+- Add links to the card/ticket as a list
+- This is a link to the second card/ticket
+- This is a link to the third card/ticket
+
+_NOTE_: It’s very rare to implement features from multiple cards in a single Merge Request
+
+## Tasks
+
+1. Implement responsive designs of Sign in page
+2. Add validations to email and password
+3. Add redux related code to make API calls
+4. Keep adding tasks if more
+
+## TODO
+
+(if merge request is a work in progress, you need to add a list of what's left to implement)
+
+1. Make login page functional
+2. Keep adding tasks if more
+
+## Screenshots
+
+(If merge request has UI changes, then it must always be accompanied by screenshots of UI)
+
+1. Login page in Desktop
+
+Screenshot
+
+2. Login page in mobile
+
+Screenshot
+```
+
+#### Preview
+
+This is what you will see when you click on the Preview button
+
+![Preview 1](../../../images/guidelines/merge-requests/md-preview-1.png "Markdown Preview 1")
+![Preview 2](../../../images/guidelines/merge-requests/md-preview-2.png "Markdown Preview 2")
+
+### After creating a merge request
+
+#### As a reviewee (you created the merge request)
+
+As soon as you create a merge request, you should be doing the following things:
+
+1. Review code changes in the merge request so that you can fix issues if you find any
+2. Ask peer or supervisors to review your merge request
+3. Keep an eye on your email when merge requests are reviewed and you are asked to update code
+4. Answer questions in the reviewed code if any
+5. Update code if required after the code has been reviewed
+
+#### As a reviewer
+
+1. Be nice and friendly
+2. Don't comment on people's code, comment only on code! Purpose of code review is to have a friendly discussion than trying to show what you know and what you want the reviewee to do E.g. "Code could be better if proper formatting was added through prettier" to "You should add prettier, this code isn't looking good!"
+3. Give proper coding examples wherever applicable.
