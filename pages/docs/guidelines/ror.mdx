@@ -8,117 +8,9 @@ order: 2
 
 ## Standard Gems
 
-Here, we plan to get insights into different gems used for Ruby on Rails application development phase, testing phase and user interface (UI) changes along with the installation process to add those gems into our projects.
+Here, we plan to get insights into different gems used for Ruby on Rails application development phase, testing phase and the staging/production environment along with the installation process to add those gems into our projects.
 
 ### Development
-
-While developing a rails application at Truemark, we place great emphasis on user authentication and authorization so we prefer using the following modules to ensure the preceding conditions are met.
-
-<br />
-
-#### Devise
-
-Devise is a flexible authentication module for Rails with Warden. It is a rack based MVC solution composed of multiple modules which can be signed into or added to our projects based on the use cases.
-
-Devise can be added to any project by either executing the global install command or adding the devise gem in the gemfile.
-
-To `global install` devise
-
-```
-gem install devise
-```
-
-To add the module in the `gemfile`
-
-```
-gem 'devise', '~> 4.8', '>= 4.8.1'
-```
-
-The aforementioned devise version is subject to change so please find the official devise gem and github link below for latest version:
-
-Github: [devise docs](https://github.com/heartcombo/devise)
-
-Rubygems: [devise gem](https://rubygems.org/gems/devise)
-
-<br />
-
-#### Devise::JWT
-
-Devise::JWT is the devise extension which uses `JWT` tokens for user authentication with configurable token revocation strategies.
-
-This gem can also be added to any rails project by either executing the global install command or adding the devise gem in the gemfile.
-
-To `global install` devise
-
-```
-gem install devise-jwt
-```
-
-To add the module in the `gemfile`
-
-```
-gem 'devise-jwt', '~> 0.10.0'
-```
-
-The aforementioned devise-jwt version is subject to change so please find the official devise-jwt gem and github link below for latest version:
-
-Github: [devise-jwt docs](https://github.com/waiting-for-dev/devise-jwt)
-
-Rubygems: [devise-jwt gem](https://rubygems.org/gems/devise-jwt)
-
-<br />
-
-#### Doorkeeper
-
-Doorkeeper is an `OAuth 2` provider gem for Rails and Grape application.
-
-This gem can be added to any rails project by either executing the global install command or adding the doorkeeper gem in the gemfile.
-
-To `global install` doorkeeper
-
-```
-gem install doorkeeper
-```
-
-To add the module in the `gemfile`
-
-```
-gem 'doorkeeper', '~> 5.6', '>= 5.6.2'
-```
-
-The aforementioned doorkeeper version is subject to change so please find the official doorkeeper gem and github link below for latest version:
-
-Github: [doorkeeper docs](https://github.com/doorkeeper-gem/doorkeeper)
-
-Rubygems: [doorkeeper gem](https://rubygems.org/gems/doorkeeper)
-
-<br />
-
-#### Pundit
-
-When it comes to building an object oriented authorization for Rails applications, Pundit offers a set of helpers which guide you in leveraging regular Ruby classes and object oriented design patterns to build a robust and scalable authorization system.
-
-This gem can be added to any rails project by either executing the global install command or adding the pundit gem in the gemfile.
-
-To `global install` pundit
-
-```
-gem install pundit
-```
-
-To add the module in the `gemfile`
-
-```
-gem 'pundit', '~> 2.2'
-```
-
-The aforementioned pundit version is subject to change so please find the official pundit gem and github link below for latest version:
-
-Github: [pundit docs](https://github.com/varvet/pundit)
-
-Rubygems: [pundit gem](https://rubygems.org/gems/pundit)
-
-<br />
 
 #### CanCanCan
 
@@ -406,11 +298,11 @@ Rubygems: [capistrano gem](https://rubygems.org/gems/capistrano)
 
 <br />
 
-#### Figaro
+#### Environment Variables Manager
 
-Figaro allows simple, heroku-friendly rails app `configuration` using ENV and a single YAML file. It was written to make it easy to securely configure rails applications since configuration values often include sensitive information. Figaro strives to be secure by default by encouraging a convention that keeps configuration out of git. But there isn't just figaro which offers a secure way to store configuation data but a custom yml file in combination with Rails 4.2 feature [config_for](https://www.justinweiss.com/articles/the-lesser-known-features-in-rails-4-dot-2//) also offers nearly the same benefits.
+##### Figaro
 
-While `config_for` tends to be a more simple solution than adding an additional dependency since it is a built-in rails feature but figaro has much more to offer. It has a `require_keys` method to raise an error during initialization in case you haven't specified the required configuration values. With figaro one can keep more flexibilty to change the configuration implementation based on environment variables.
+Figaro strives to keep API keys, environment variables and other configurations off your git repositories in a fairly easy to accomplish manner. It was written to make it easy to securely configure rails applications since configuration values often include sensitive information. With figaro one can keep more flexibilty to change the configuration implementation based on environment variables.
 
 This gem can be added to any rails project by either executing the global install command or adding the figaro gem in the gemfile.
 
@@ -434,142 +326,23 @@ Rubygems: [figaro gem](https://rubygems.org/gems/figaro)
 
 <br />
 
-#### Action Cable
+##### Config_for
 
-Action Cable seamlessly integrates `WebSockets` with the rest of our rails application to structure many real-time application concerns into channels over a single websocket connection. It allows for real-time features to be written in ruby in the same style and form as the rest of our application, while still being performant and scalable. It's a full-stack offering that provides both a client-side JavaScript framework and a server-side Ruby framework. You have access to your entire domain model written with Active Record or your ORM of choice.
+There isn't just figaro which offers a secure way to store `configuation data` but a custom yml file in combination with Rails 4.2 feature `config_for` also offers nearly the same benefits. Even though figaro offers the benefits that are far more lucrative but it still is an additional dependency while config_for is a built-in rails feature which tends to be a more simple solution than adding an extra gem dependency.
 
-This gem can be added to any rails project by either executing the global install command or adding the actioncable gem in the gemfile.
+To find more about the feature usage please visit the link to the configuration guide given below:
 
-To `global install` actioncable
-
-```
-gem install actioncable
-```
-
-To add the module in the `gemfile`
-
-```
-gem 'actioncable', '~> 7.0', '>= 7.0.4'
-```
-
-The aforementioned actioncable version is subject to change so please find the official actioncable gem and github link below for latest version:
-
-Official Documentation: [actioncable docs](https://guides.rubyonrails.org/action_cable_overview.html)
-
-Rubygems: [actioncable gem](https://rubygems.org/gems/actioncable)
+Configuration Guide: [config_for](https://www.justinweiss.com/articles/the-lesser-known-features-in-rails-4-dot-2/)
 
 <br />
 
-#### Redis
+##### Rails Credentials
 
-Redis is a ruby client that tries to match Redis' API one-to-one, while still providing an idiomatic interface. Redis is an `in-memory` data structure store used to help building high-performance and scalable web applications, similar to [Memcached](https://memcached.org/), but with two main differences:
+Rails yet another built-in feature offers a way to store api keys and secrets in an encrypted file which cannot be edited directly. Rails uses `config/master.key` or alternatively looks for the environment variable `ENV["RAILS_MASTER_KEY"]` to encrypt the credentials file. Because the credentials file is encrypted, it can be stored in version control, as long as the master key is kept safe. By default, the credentials file contains the application's secret_key_base. It can also be used to store other secrets such as access keys for external APIs.
 
-- Redis can persist data to disk, making it a kind of NoSQL database, so data won't disappear when restarting the server.
-- Redis can store more data types besides strings, such as Hashes, Lists, Sets and Sorted Sets.
+To find more about the feature usage please visit the official rails guide given below:
 
-The persistence capability is intriguing, however if there is a power outage and Redis didn't have time to persist the latest data, some applications may be impacted. Another intriguing aspect is that it may append each command to a log in these circumstances.
-
-Redis may therefore apply all the commands across the data to return to the most recent state in the event of a failure after resuming. Redis can be used as a message-queue broker, database, or `caching` system. In a server group, it can also be used with primary-secondary asynchronous replication.
-
-This gem can be added to any rails project by either executing the global install command or adding the redis-rb gem in the gemfile.
-
-To `global install` redis-rb
-
-```
-gem install redis
-```
-
-To add the module in the `gemfile`
-
-```
-gem 'redis', '~> 5.0', '>= 5.0.5'
-```
-
-The aforementioned redis-rb version is subject to change so please find the official redis-rb gem and github link below for latest version:
-
-Github: [redis-rb docs](https://github.com/redis/redis-rb)
-
-Rubygems: [redis-rb gem](https://rubygems.org/gems/redis)
-
-<br />
-
-#### Active Model Serializers
-
-ActiveModel::Serializers allows you to generate your JSON in an object-oriented and convention-driven manner which brings convention over configuration to your JSON generation. It works through two components: serializers and adapters. Serializers describe which attributes and relationships should be serialized while adapters describe how attributes and relationships should be serialized. The easiest way to create a new serializer is to generate a new resource, which will generate a serializer at the same time.
-
-This gem can be added to any rails project by either executing the global install command or adding the active_model_serializers gem in the gemfile.
-
-To `global install` active_model_serializers
-
-```
-gem install active_model_serializers
-```
-
-To add the module in the `gemfile`
-
-```
-gem 'active_model_serializers', '~> 0.10.13'
-```
-
-The aforementioned active_model_serializers version is subject to change so please find the official active_model_serializers gem and github link below for latest version:
-
-Github: [active_model_serializers docs](https://github.com/rails-api/active_model_serializers)
-
-Rubygems: [active_model_serializers gem](https://rubygems.org/gems/active_model_serializers)
-
-<br />
-
-#### Pg
-
-Pg is the Ruby interface to the `PostgreSQL` RDBMS client library. It works with PostgreSQL 9.3 and later. It usually works with earlier versions of Ruby/PostgreSQL as well, but those are not regularly tested. PostgreSQL is a powerful, open source object-relational database system with over decades of active development that has earned it a strong reputation for reliability, feature robustness, and performance.
-
-This gem can be added to any rails project by either executing the global install command or adding the pg gem in the gemfile.
-
-To `global install` pg
-
-```
-gem install pg
-```
-
-To add the module in the `gemfile`
-
-```
-gem 'pg', '~> 1.4', '>= 1.4.5'
-```
-
-The aforementioned pg version is subject to change so please find the official pg gem and github link below for latest version:
-
-Github: [pg docs](https://github.com/ged/ruby-pg)
-
-Rubygems: [pg gem](https://rubygems.org/gems/pg)
-
-<br />
-
-#### MySQL2
-
-The Mysql2 gem is a modern, simple & fast Mysql library for Ruby which is meant to serve the extremely common use-case of connecting, querying and iterating on results. Some database libraries available out there serve as direct one-on-one mappings of the already complex C APIs available while this one is not. It also forces the use of UTF-8 (or binary) for the connection and uses encoding-aware MySQL API calls where it can.
-
-Mysql2 links against MySQL's `libmysqlclient` library or `Connector/C` library, and compatible alternatives such as `MariaDB`. So, you may need to install a package such as `libmariadb-dev`, `libmysqlclient-dev`, `mysql-devel`, or other appropriate package for your system. For system-specific instructions, you may need to visit the Github link given below.
-
-This gem can be added to any rails project by either executing the global install command or adding the mysql2 gem in the gemfile.
-
-To `global install` mysql2
-
-```
-gem install mysql2
-```
-
-To add the module in the `gemfile`
-
-```
-gem 'mysql2', '~> 0.5.4'
-```
-
-The aforementioned mysql2 version is subject to change so please find the official mysql2 gem and github link below for latest version:
-
-Github: [mysql2 docs](https://github.com/brianmario/mysql2)
-
-Rubygems: [mysql2 gem](https://rubygems.org/gems/mysql2)
+Rails Guide: [rails_credentials](https://edgeguides.rubyonrails.org/security.html)
 
 <br />
 
@@ -934,5 +707,254 @@ The aforementioned liquid version is subject to change so please find the offici
 Github: [liquid docs](https://github.com/Shopify/liquid)
 
 Rubygems: [liquid gem](https://rubygems.org/gems/liquid)
+
+<br />
+
+### Production
+
+#### Active Model Serializers
+
+ActiveModel::Serializers allows you to generate your JSON in an object-oriented and convention-driven manner which brings convention over configuration to your JSON generation. It works through two components: serializers and adapters. Serializers describe which attributes and relationships should be serialized while adapters describe how attributes and relationships should be serialized. The easiest way to create a new serializer is to generate a new resource, which will generate a serializer at the same time.
+
+This gem can be added to any rails project by either executing the global install command or adding the active_model_serializers gem in the gemfile.
+
+To `global install` active_model_serializers
+
+```
+gem install active_model_serializers
+```
+
+To add the module in the `gemfile`
+
+```
+gem 'active_model_serializers', '~> 0.10.13'
+```
+
+The aforementioned active_model_serializers version is subject to change so please find the official active_model_serializers gem and github link below for latest version:
+
+Github: [active_model_serializers docs](https://github.com/rails-api/active_model_serializers)
+
+Rubygems: [active_model_serializers gem](https://rubygems.org/gems/active_model_serializers)
+
+<br />
+
+#### Action Cable
+
+Action Cable seamlessly integrates `WebSockets` with the rest of our rails application to structure many real-time application concerns into channels over a single websocket connection. It allows for real-time features to be written in ruby in the same style and form as the rest of our application, while still being performant and scalable. It's a full-stack offering that provides both a client-side JavaScript framework and a server-side Ruby framework. You have access to your entire domain model written with Active Record or your ORM of choice.
+
+This gem can be added to any rails project by either executing the global install command or adding the actioncable gem in the gemfile.
+
+To `global install` actioncable
+
+```
+gem install actioncable
+```
+
+To add the module in the `gemfile`
+
+```
+gem 'actioncable', '~> 7.0', '>= 7.0.4'
+```
+
+The aforementioned actioncable version is subject to change so please find the official actioncable gem and github link below for latest version:
+
+Official Documentation: [actioncable docs](https://guides.rubyonrails.org/action_cable_overview.html)
+
+Rubygems: [actioncable gem](https://rubygems.org/gems/actioncable)
+
+<br />
+
+#### Database Backend
+
+##### Pg
+
+Pg is the Ruby interface to the `PostgreSQL` RDBMS client library. It works with PostgreSQL 9.3 and later. It usually works with earlier versions of Ruby/PostgreSQL as well, but those are not regularly tested. PostgreSQL is a powerful, open source object-relational database system with over decades of active development that has earned it a strong reputation for reliability, feature robustness, and performance.
+
+This gem can be added to any rails project by either executing the global install command or adding the pg gem in the gemfile.
+
+To `global install` pg
+
+```
+gem install pg
+```
+
+To add the module in the `gemfile`
+
+```
+gem 'pg', '~> 1.4', '>= 1.4.5'
+```
+
+The aforementioned pg version is subject to change so please find the official pg gem and github link below for latest version:
+
+Github: [pg docs](https://github.com/ged/ruby-pg)
+
+Rubygems: [pg gem](https://rubygems.org/gems/pg)
+
+<br />
+
+##### MySQL2
+
+The Mysql2 gem is a modern, simple & fast Mysql library for Ruby which is meant to serve the extremely common use-case of connecting, querying and iterating on results. Some database libraries available out there serve as direct one-on-one mappings of the already complex C APIs available while this one is not. It also forces the use of UTF-8 (or binary) for the connection and uses encoding-aware MySQL API calls where it can.
+
+Mysql2 links against MySQL's `libmysqlclient` library or `Connector/C` library, and compatible alternatives such as `MariaDB`. So, you may need to install a package such as `libmariadb-dev`, `libmysqlclient-dev`, `mysql-devel`, or other appropriate package for your system. For system-specific instructions, you may need to visit the Github link given below.
+
+This gem can be added to any rails project by either executing the global install command or adding the mysql2 gem in the gemfile.
+
+To `global install` mysql2
+
+```
+gem install mysql2
+```
+
+To add the module in the `gemfile`
+
+```
+gem 'mysql2', '~> 0.5.4'
+```
+
+The aforementioned mysql2 version is subject to change so please find the official mysql2 gem and github link below for latest version:
+
+Github: [mysql2 docs](https://github.com/brianmario/mysql2)
+
+Rubygems: [mysql2 gem](https://rubygems.org/gems/mysql2)
+
+<br />
+
+#### Redis
+
+Redis is a ruby client that tries to match Redis' API one-to-one, while still providing an idiomatic interface. Redis is an `in-memory` data structure store used to help building high-performance and scalable web applications, similar to [Memcached](https://memcached.org/), but with two main differences:
+
+- Redis can persist data to disk, making it a kind of NoSQL database, so data won't disappear when restarting the server.
+- Redis can store more data types besides strings, such as Hashes, Lists, Sets and Sorted Sets.
+
+The persistence capability is intriguing, however if there is a power outage and Redis didn't have time to persist the latest data, some applications may be impacted. Another intriguing aspect is that it may append each command to a log in these circumstances.
+
+Redis may therefore apply all the commands across the data to return to the most recent state in the event of a failure after resuming. Redis can be used as a message-queue broker, database, or `caching` system. In a server group, it can also be used with primary-secondary asynchronous replication.
+
+This gem can be added to any rails project by either executing the global install command or adding the redis-rb gem in the gemfile.
+
+To `global install` redis-rb
+
+```
+gem install redis
+```
+
+To add the module in the `gemfile`
+
+```
+gem 'redis', '~> 5.0', '>= 5.0.5'
+```
+
+The aforementioned redis-rb version is subject to change so please find the official redis-rb gem and github link below for latest version:
+
+Github: [redis-rb docs](https://github.com/redis/redis-rb)
+
+Rubygems: [redis-rb gem](https://rubygems.org/gems/redis)
+
+<br />
+
+#### Authentication & Authorization
+
+#### Devise
+
+Devise is a flexible authentication module for Rails with Warden. It is a rack based MVC solution composed of multiple modules which can be signed into or added to our projects based on the use cases.
+
+Devise can be added to any project by either executing the global install command or adding the devise gem in the gemfile.
+
+To `global install` devise
+
+```
+gem install devise
+```
+
+To add the module in the `gemfile`
+
+```
+gem 'devise', '~> 4.8', '>= 4.8.1'
+```
+
+The aforementioned devise version is subject to change so please find the official devise gem and github link below for latest version:
+
+Github: [devise docs](https://github.com/heartcombo/devise)
+
+Rubygems: [devise gem](https://rubygems.org/gems/devise)
+
+<br />
+
+#### Devise::JWT
+
+Devise::JWT is the devise extension which uses `JWT` tokens for user authentication with configurable token revocation strategies.
+
+This gem can also be added to any rails project by either executing the global install command or adding the devise gem in the gemfile.
+
+To `global install` devise
+
+```
+gem install devise-jwt
+```
+
+To add the module in the `gemfile`
+
+```
+gem 'devise-jwt', '~> 0.10.0'
+```
+
+The aforementioned devise-jwt version is subject to change so please find the official devise-jwt gem and github link below for latest version:
+
+Github: [devise-jwt docs](https://github.com/waiting-for-dev/devise-jwt)
+
+Rubygems: [devise-jwt gem](https://rubygems.org/gems/devise-jwt)
+
+<br />
+
+#### Pundit
+
+When it comes to building an object oriented authorization for Rails applications, Pundit offers a set of helpers which guide you in leveraging regular Ruby classes and object oriented design patterns to build a robust and scalable authorization system.
+
+This gem can be added to any rails project by either executing the global install command or adding the pundit gem in the gemfile.
+
+To `global install` pundit
+
+```
+gem install pundit
+```
+
+To add the module in the `gemfile`
+
+```
+gem 'pundit', '~> 2.2'
+```
+
+The aforementioned pundit version is subject to change so please find the official pundit gem and github link below for latest version:
+
+Github: [pundit docs](https://github.com/varvet/pundit)
+
+Rubygems: [pundit gem](https://rubygems.org/gems/pundit)
+
+<br />
+
+#### Doorkeeper
+
+Doorkeeper is a rails engine that makes it easy to introduce `OAuth 2` provider functionality to your Ruby on Rails or Grape application. The OAuth 2.0 authorization framework enables a third-party application to obtain limited access to an HTTP service, either on behalf of a resource owner by setting up an approval interaction between the resource owner and the HTTP service, or by allowing the third-party application to obtain access on its own behalf.
+
+This gem can be added to any rails project by either executing the global install command or adding the doorkeeper gem in the gemfile.
+
+To `global install` doorkeeper
+
+```
+gem install doorkeeper
+```
+
+To add the module in the `gemfile`
+
+```
+gem 'doorkeeper', '~> 5.6', '>= 5.6.2'
+```
+
+The aforementioned doorkeeper version is subject to change so please find the official doorkeeper gem and github link below for latest version:
+
+Github: [doorkeeper docs](https://github.com/doorkeeper-gem/doorkeeper)
+
+Rubygems: [doorkeeper gem](https://rubygems.org/gems/doorkeeper)
 
 <br />
