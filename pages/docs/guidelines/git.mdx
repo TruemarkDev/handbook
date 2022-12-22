@@ -8,17 +8,15 @@ order: 3
 
 ## GIT Branching Rules
 
-Many developers work on different features, fixes, hot fixes and upgrades in a single project. If each developer started to name the branch according to their preference, it will be difficult to know what they have worked on and will become confusing while merging the branch to deploy into production. Therefore, some convention must be followed while naming the branch. So, to avoid the confusion and smooth project completion, we follow certain naming convention for our branch name here at Truemark.
+Many developers work on different features, fixes, hot fixes and upgrades in a single project. If each developer started to name the branch according to their preference, it will be difficult to know what they have worked on and will become confusing while merging the branch to deploy into production. Therefore, some standard must be followed while naming the branch. So, to avoid the confusion and smooth project completion, we follow certain naming standard for our branch name here at Truemark.
 
-GIT branch name should follow following convention:
+GIT branch name should follow following standard:
 
-```
-<COMMIT-TYPE>/<TICKET-NUMBER>/<FEATURE-TITLE>
-```
+[COMMIT-TYPE](/docs/guidelines/git#commit-type) / [TICKET-NUMBER](/docs/guidelines/git#ticket-number) / [FEATURE-TITLE](/docs/guidelines/git#feature-title)
 
-Now after you are familiar with our convention of naming the branch and example for it, let's discuss the convention in brief below:
+Now after you are familiar with our standard of naming the branch and example for it, let's discuss the standard in brief below:
 
-**COMMIT-TYPE**
+#### COMMIT-TYPE
 
 There can be different commit types according to what type of code you are adding to the project.
 
@@ -27,7 +25,7 @@ There can be different commit types according to what type of code you are addin
 - If you are working on fixing the bugs that are in production and require immediate fix, commit-type should be `hot-fixes/`.
 - If you are working on upgrading the app whenever newer version of framework is released or certain package you have used are upgraded, commit-type should be `upgrades/`.
 
-**TICKET-NUMBER**
+#### TICKET-NUMBER
 
 There is chance where multiple developers are working on the same feature or bug in a large project. Therefore, to distinguish and break down there tasks, we tend to use Trello and Jira for project management here at Truemark. Each Jira or Trello card has a ticket number or card number assigned to them and we use this card number while naming our branch so that project manager or other managers get insights upon the task whenever it is completed.
 
@@ -41,7 +39,7 @@ Example Jira Card with card number:
 
 ![Jira card example](../../../images/guidelines/git/jira-card.jpg)
 
-**FEATURE TITLE**
+#### FEATURE TITLE
 
 Feature title should be derived from the card you are working on. Sometimes it can be a bit long but generally it should be short yet clearly describe the feature/fixes that is being worked on.
 
@@ -77,7 +75,7 @@ features/1310/list-users-in-admin-dashboard
 
 Git commit messages should be descriptive and should always describe the changes done while working on the certain task. Changes indicates all the updates, deletion and addition done in the repository.
 
-It should follow the following convention while writing the commit message:
+It should follow the following standard while writing the commit message:
 
 ```
 <COMMIT-TYPE>/<TICKET-NUMBER> - <FEATURE-TITLE>
@@ -95,7 +93,7 @@ Commit title generally follows the Trello title or branch name. After providing 
 
 ### Examples
 
-Example for the git commit rule:
+Example for the git commit standard:
 
 #### Bad Commit
 
@@ -104,14 +102,10 @@ Let's look at the bad commit example and see how confusing it will become to und
 ```
 // Bad git commit
 
-git commit -m "searching functionality
-
-    - add input
-    - validate it
-"
+git commit -m "Searching Functionality"
 ```
 
-From above commit message, were you able to figure out what is going on there? It says `searching functionality` as commit title, but in which task the developer is working on and in which project? and what are we searching here? persons? birds? or cars? We are in a confusion about what this commit says. Now, let's move on to another section of commit which is describing the tasks done. It says `add input` but what is the input for and what value does it get? Moving on to another task, it says `validate it` but which input is it validating? and what is it validating? So, analyzing the scenario, we can infer that we should always make our commit clear and concise. Many developers who work on legacy project need to have understanding about the codebase when they are working on upgrading, but these kind of commit messages make those developers confused and they cannot infer anything from these. So, for making our project and codebase future proof, we should have our commit messages clean and clear.
+From above commit message, were you able to figure out what is going on there? It says `searching functionality` as commit title, but in which task the developer is working on and in which project? and what are we searching here? persons? birds? or cars? We are in a confusion about what this commit says. Also, there are no sub-tasks described which are done in order to complete the `Searching Functionality`. It doesn't answer some questions like, What are the tasks done in order to complete the `searching functionality`? What were the steps? In this scenario, when other developer works on maintaining it, they might get confused while trying to get insights on the work done for the `searching` feature. So, for making our project and codebase future proof, we should have our commit messages clean and clear.
 
 #### Good Commit
 
@@ -124,8 +118,9 @@ git commit -m "Features/129 - add input field for searching product
 
 Tasks done
 ---
-    - add input field to search for products
-    - add empty value validation to search field
+
+- add input field to search for products
+- add empty value validation to search field
 "
 ```
 
@@ -145,9 +140,8 @@ git commit -m "Features/132 Resolve PR comments
 Tasks done
 ---
 
-    - Fixed grammatical typo inside the component <Alert />
-    - Fixed import structure for react packages inside component <Table />
-
+- Fixed grammatical typo inside the component <Alert />
+- Fixed import structure for react packages inside component <Table />
 "
 ```
 
@@ -160,8 +154,9 @@ git commit -m "Features/569 Resolve merge conflict with develop branch
 
 Merge Conflicts in
 ---
-    - src/components/Table.jsx
-    - src/views/User/List.jsx
+
+- src/components/Table.jsx
+- src/views/User/List.jsx
 "
 ```
 
