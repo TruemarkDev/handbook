@@ -408,6 +408,138 @@ Rubygems: [pronto-rubocop gem](https://rubygems.org/gems/pronto-rubocop)
 
 <br />
 
+#### User Interface (UI)
+
+##### Pagy
+
+Pagy gem is an agnostic pagination in plain ruby. It supports all kinds of pagination, works in any environment, with any collection such as DB or ORM, supports all kinds of CSS Frameworks, supports faster client-side rendering and has 100% of test coverage for Ruby, HTML and JavaScript E2E.
+
+This gem can be added to any rails project by either executing the global install command or adding the pagy gem in the gemfile.
+
+To `global install` pagy
+
+```
+gem install pagy
+```
+
+To add the module in the `gemfile`
+
+```
+gem 'pagy', '~> 5.10', '>= 5.10.1'
+```
+
+The aforementioned pagy version is subject to change so please find the official pagy gem and github link below for latest version:
+
+Github: [pagy docs](https://github.com/ddnexus/pagy)
+
+Rubygems: [pagy gem](https://rubygems.org/gems/pagy)
+
+<br />
+
+##### Kaminari
+
+Kaminari is a Scope & Engine based, clean, powerful, agnostic, customizable and sophisticated `paginator` for modern web app frameworks and ORMs.
+
+This gem can be added to any rails project by either executing the global install command or adding the kaminari gem in the gemfile.
+
+To `global install` kaminari
+
+```
+gem install kaminari
+```
+
+To add the module in the `gemfile`
+
+```
+gem 'kaminari', '~> 1.2', '>= 1.2.2'
+```
+
+The aforementioned kaminari version is subject to change so please find the official kaminari gem and github link below for latest version:
+
+Github: [kaminari docs](https://github.com/kaminari/kaminari)
+
+Rubygems: [kaminari gem](https://rubygems.org/gems/kaminari)
+
+<br />
+
+##### Sass Rails
+
+Sass Rails gem provides official integration for rails projects with the `Sass` stylesheet language.
+
+This gem can be added to any rails project by either executing the global install command or adding the sass-rails gem in the gemfile.
+
+To `global install` sass-rails
+
+```
+gem install sass-rails
+```
+
+To add the module in the `gemfile`
+
+```
+gem 'sass-rails', '~> 6.0'
+```
+
+The aforementioned sass-rails version is subject to change so please find the official sass-rails gem and github link below for latest version:
+
+Github: [sass-rails docs](https://github.com/rails/sass-rails)
+
+Rubygems: [sass-rails gem](https://rubygems.org/gems/sass-rails)
+
+<br />
+
+##### CKEditor
+
+CKEditor is a community maintained WYSIWYG `text editor` designed to simplify and enhance web content creation. It brings common word processing features directly to our web pages.
+
+This gem can be added to any rails project by either executing the global install command or adding the ckeditor gem in the gemfile.
+
+To `global install` ckeditor
+
+```
+gem install ckeditor
+```
+
+To add the module in the `gemfile`
+
+```
+gem 'ckeditor', '~> 5.1', '>= 5.1.1'
+```
+
+The aforementioned ckeditor version is subject to change so please find the official ckeditor gem and github link below for latest version:
+
+Github: [ckeditor docs](https://github.com/galetahub/ckeditor)
+
+Rubygems: [ckeditor gem](https://rubygems.org/gems/ckeditor)
+
+<br />
+
+##### Liquid
+
+Liquid is a secure, non-evaling end user `template engine` which was written with very specific requirements to produce an aesthetic markup.
+
+This gem can be added to any rails project by either executing the global install command or adding the liquid gem in the gemfile.
+
+To `global install` liquid
+
+```
+gem install liquid
+```
+
+To add the module in the `gemfile`
+
+```
+gem 'liquid', '~> 5.4'
+```
+
+The aforementioned liquid version is subject to change so please find the official liquid gem and github link below for latest version:
+
+Github: [liquid docs](https://github.com/Shopify/liquid)
+
+Rubygems: [liquid gem](https://rubygems.org/gems/liquid)
+
+<br />
+
 ### Testing
 
 After a feature has been completed, it has to be documented and tested to ensure that the code works as expected for a behavior and use case. It always starts with writing a failing test case and then refactoring just enough code to pass the test.
@@ -522,191 +654,116 @@ Rubygems: [rswag gem](https://rubygems.org/gems/rswag)
 
 <br />
 
-### User Interface (UI)
+##### Database Cleaner Adapter for ActiveRecord
 
-Ruby on Rails is a compelling framework to develop web applications due to its support for MVC architectural pattern that separates the entire application into three main logical components: Model, View and Controller. It's the View layer that handles the user interface of the application which is a functional structure when it comes to enhancing the user interaction.
+Database Cleaner for ActiveRecord is a gem that contains strategies for `cleaning databases` using ActiveRecord. The use case of this gem is to ensure a clean state of database for `testing`. Each strategy is a small amount of code but is code that is usually needed in any ruby app that is testing with a database. For the SQL libraries, the fastest option will be to use `:transaction` as transactions can simply be rolled back. If you wind up needing to use multiple database connections in your tests (i.e. your tests run in a different process than your application) then using this strategy becomes a bit more difficult.
 
-<br />
+This gem can be added to any rails project by either executing the global install command or adding the database_cleaner-active_record gem in the gemfile.
 
-#### Pagy
-
-Pagy gem is an agnostic pagination in plain ruby. It supports all kinds of pagination, works in any environment, with any collection such as DB or ORM, supports all kinds of CSS Frameworks, supports faster client-side rendering and has 100% of test coverage for Ruby, HTML and JavaScript E2E.
-
-This gem can be added to any rails project by either executing the global install command or adding the pagy gem in the gemfile.
-
-To `global install` pagy
+To `global install` database_cleaner-active_record
 
 ```
-gem install pagy
+gem install database_cleaner-active_record
 ```
 
 To add the module in the `gemfile`
 
 ```
-gem 'pagy', '~> 5.10', '>= 5.10.1'
+gem 'database_cleaner-active_record', '~> 2.0', '>= 2.0.1'
 ```
 
-The aforementioned pagy version is subject to change so please find the official pagy gem and github link below for latest version:
+The aforementioned database_cleaner-active_record version is subject to change so please find the official database_cleaner-active_record gem and github link below for latest version:
 
-Github: [pagy docs](https://github.com/ddnexus/pagy)
+Github: [database_cleaner-active_record docs](https://github.com/DatabaseCleaner/database_cleaner-active_record)
 
-Rubygems: [pagy gem](https://rubygems.org/gems/pagy)
+Rubygems: [database_cleaner-active_record gem](https://rubygems.org/gems/database_cleaner-active_record)
 
 <br />
 
-#### Kaminari
+##### WebMock
 
-Kaminari is a Scope & Engine based, clean, powerful, agnostic, customizable and sophisticated `paginator` for modern web app frameworks and ORMs.
+WebMock is a library that allows stubbing HTTP requests, setting and verifying expectations on HTTP requests in Ruby. It does a lot more than stubbing and setting expectations on HTTP requests such as:
 
-This gem can be added to any rails project by either executing the global install command or adding the kaminari gem in the gemfile.
+- Matching requests based on method, URI, headers and body
+- Smart matching of the same URIs in different representations (also encoded and non encoded forms)
+- Smart matching of the same headers in different representations.
+- Support for Test::Unit, RSpec and MiniTest
 
-To `global install` kaminari
+This gem can be added to any rails project by either executing the global install command or adding the webmock gem in the gemfile.
+
+To `global install` webmock
 
 ```
-gem install kaminari
+gem install webmock
 ```
 
 To add the module in the `gemfile`
 
 ```
-gem 'kaminari', '~> 1.2', '>= 1.2.2'
+gem 'webmock', '~> 3.18', '>= 3.18.1'
 ```
 
-The aforementioned kaminari version is subject to change so please find the official kaminari gem and github link below for latest version:
+The aforementioned webmock version is subject to change so please find the official webmock gem and github link below for latest version:
 
-Github: [kaminari docs](https://github.com/kaminari/kaminari)
+Github: [webmock docs](https://github.com/bblimke/webmock)
 
-Rubygems: [kaminari gem](https://rubygems.org/gems/kaminari)
+Rubygems: [webmock gem](https://rubygems.org/gems/webmock)
 
 <br />
 
-#### Font Awesome Rails
+##### Capybara
 
-Font Awesome Rails provides the Font-Awesome `web fonts` and stylesheets as a Rails engine for use with the asset pipeline.
+Capybara is an integration testing tool for rack based web applications. It helps you test web applications by `simulating` how a real user would interact with your app by enacting `acceptance testing` for the app. It is agnostic about the driver running your tests and comes with Rack::Test and Selenium support built in. WebKit is supported through an external gem.
 
-This gem can be added to any rails project by either executing the global install command or adding the font-awesome-rails gem in the gemfile.
+This gem can be added to any rails project by either executing the global install command or adding the capybara gem in the gemfile.
 
-To `global install` font-awesome-rails
+To `global install` capybara
 
 ```
-gem install font-awesome-rails
+gem install capybara
 ```
 
 To add the module in the `gemfile`
 
 ```
-gem 'font-awesome-rails', '~> 4.7', '>= 4.7.0.8'
+gem 'capybara', '~> 3.38'
 ```
 
-The aforementioned font-awesome-rails version is subject to change so please find the official font-awesome-rails gem and github link below for latest version:
+The aforementioned capybara version is subject to change so please find the official capybara gem and github link below for latest version:
 
-Github: [font-awesome-rails docs](https://github.com/bokmann/font-awesome-rails)
+Github: [capybara docs](https://github.com/teamcapybara/capybara)
 
-Rubygems: [font-awesome-rails gem](https://rubygems.org/gems/font-awesome-rails)
+Rubygems: [capybara gem](https://rubygems.org/gems/capybara)
 
 <br />
 
-#### Sass Rails
+##### Timecop
 
-Sass Rails gem provides official integration for rails projects with the `Sass` stylesheet language.
+A gem providing "time travel" and "time freezing" capabilities, making it dead simple to test `time-dependent` code. It provides a unified method to mock `Time.now`, `Date.today`, and `DateTime.now` in a single call. Besides this, it offers a great set of other key benefits such as:
 
-This gem can be added to any rails project by either executing the global install command or adding the sass-rails gem in the gemfile.
+- Scale time by a given scaling factor that will cause time to move at an accelerated pace.
+- No dependencies, can be used with any Ruby and Ruby on Rails projects.
+- Nested calls to `Timecop#travel` and `Timecop#freeze` are supported.
 
-To `global install` sass-rails
+This gem can be added to any rails project by either executing the global install command or adding the timecop gem in the gemfile.
+
+To `global install` timecop
 
 ```
-gem install sass-rails
+gem install timecop
 ```
 
 To add the module in the `gemfile`
 
 ```
-gem 'sass-rails', '~> 6.0'
+gem 'timecop', '~> 0.9.6'
 ```
 
-The aforementioned sass-rails version is subject to change so please find the official sass-rails gem and github link below for latest version:
+The aforementioned timecop version is subject to change so please find the official timecop gem and github link below for latest version:
 
-Github: [sass-rails docs](https://github.com/rails/sass-rails)
+Github: [timecop docs](https://github.com/travisjeffery/timecop)
 
-Rubygems: [sass-rails gem](https://rubygems.org/gems/sass-rails)
-
-<br />
-
-#### Bootstrap
-
-Bootstrap is a rubygem for Rails, Sprockets, Hanami, etc. It is the most popular HTML, CSS, and JavaScript framework for developing responsive, mobile first projects on the web.
-
-This gem can be added to any rails project by either executing the global install command or adding the bootstrap gem in the gemfile.
-
-To `global install` bootstrap
-
-```
-gem install bootstrap
-```
-
-To add the module in the `gemfile`
-
-```
-gem 'bootstrap', '~> 5.2', '>= 5.2.3'
-```
-
-The aforementioned bootstrap version is subject to change so please find the official bootstrap gem and github link below for latest version:
-
-Github: [bootstrap docs](https://github.com/twbs/bootstrap-rubygem)
-
-Rubygems: [bootstrap gem](https://rubygems.org/gems/bootstrap)
-
-<br />
-
-#### CKEditor
-
-CKEditor is a community maintained WYSIWYG `text editor` designed to simplify and enhance web content creation. It brings common word processing features directly to our web pages.
-
-This gem can be added to any rails project by either executing the global install command or adding the ckeditor gem in the gemfile.
-
-To `global install` ckeditor
-
-```
-gem install ckeditor
-```
-
-To add the module in the `gemfile`
-
-```
-gem 'ckeditor', '~> 5.1', '>= 5.1.1'
-```
-
-The aforementioned ckeditor version is subject to change so please find the official ckeditor gem and github link below for latest version:
-
-Github: [ckeditor docs](https://github.com/galetahub/ckeditor)
-
-Rubygems: [ckeditor gem](https://rubygems.org/gems/ckeditor)
-
-<br />
-
-#### Liquid
-
-Liquid is a secure, non-evaling end user `template engine` which was written with very specific requirements to produce an aesthetic markup.
-
-This gem can be added to any rails project by either executing the global install command or adding the liquid gem in the gemfile.
-
-To `global install` liquid
-
-```
-gem install liquid
-```
-
-To add the module in the `gemfile`
-
-```
-gem 'liquid', '~> 5.4'
-```
-
-The aforementioned liquid version is subject to change so please find the official liquid gem and github link below for latest version:
-
-Github: [liquid docs](https://github.com/Shopify/liquid)
-
-Rubygems: [liquid gem](https://rubygems.org/gems/liquid)
+Rubygems: [timecop gem](https://rubygems.org/gems/timecop)
 
 <br />
 
@@ -956,5 +1013,59 @@ The aforementioned doorkeeper version is subject to change so please find the of
 Github: [doorkeeper docs](https://github.com/doorkeeper-gem/doorkeeper)
 
 Rubygems: [doorkeeper gem](https://rubygems.org/gems/doorkeeper)
+
+<br />
+
+#### User Interface (UI)
+
+##### Font Awesome Rails
+
+Font Awesome Rails provides the Font-Awesome `web fonts` and stylesheets as a Rails engine for use with the asset pipeline.
+
+This gem can be added to any rails project by either executing the global install command or adding the font-awesome-rails gem in the gemfile.
+
+To `global install` font-awesome-rails
+
+```
+gem install font-awesome-rails
+```
+
+To add the module in the `gemfile`
+
+```
+gem 'font-awesome-rails', '~> 4.7', '>= 4.7.0.8'
+```
+
+The aforementioned font-awesome-rails version is subject to change so please find the official font-awesome-rails gem and github link below for latest version:
+
+Github: [font-awesome-rails docs](https://github.com/bokmann/font-awesome-rails)
+
+Rubygems: [font-awesome-rails gem](https://rubygems.org/gems/font-awesome-rails)
+
+<br />
+
+##### Bootstrap
+
+Bootstrap is a rubygem for Rails, Sprockets, Hanami, etc. It is the most popular HTML, CSS, and JavaScript framework for developing responsive, mobile first projects on the web.
+
+This gem can be added to any rails project by either executing the global install command or adding the bootstrap gem in the gemfile.
+
+To `global install` bootstrap
+
+```
+gem install bootstrap
+```
+
+To add the module in the `gemfile`
+
+```
+gem 'bootstrap', '~> 5.2', '>= 5.2.3'
+```
+
+The aforementioned bootstrap version is subject to change so please find the official bootstrap gem and github link below for latest version:
+
+Github: [bootstrap docs](https://github.com/twbs/bootstrap-rubygem)
+
+Rubygems: [bootstrap gem](https://rubygems.org/gems/bootstrap)
 
 <br />
