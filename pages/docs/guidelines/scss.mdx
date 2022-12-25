@@ -151,8 +151,8 @@ Example:
 
 Syntax and Formatting
 Reference: 
-<https://sass-guidelin.es/#syntax--formatting>
-<https://cssguidelin.es/#syntax-and-formatting>
+https://sass-guidelin.es/#syntax--formatting
+https://cssguidelin.es/#syntax-and-formatting
 
 ## Formatting
 ### Place `@extends` and `@includes` at the top of your declaration list.
@@ -181,7 +181,7 @@ background-color: #ff0000;
 background: #ff0000;
 ```
 
-### Use one space between selector and  {
+### Use one space between selector and  `{`
 ### Use only lowercase for declarations
 ### Use space around operands 
 ```
@@ -324,7 +324,7 @@ $value: str-slice($length + unquote(''), 1, 2);
 ```
 
 Appending a unit as a string to a number results in a string, preventing any additional operation on the value.
-Reference: <https://hugogiraudel.com/2013/09/03/use-lengths-not-strings/> 
+Reference: https://hugogiraudel.com/2013/09/03/use-lengths-not-strings/
 
 Calculations
 Numeric calculations should always be wrapped in parentheses
@@ -344,7 +344,7 @@ Example:
 #### Magic Numbers
 “Magic number” is an old school programming term for unnamed numerical constant. Basically, it’s just a random number that happens to just work yet is not tied to any logical explanation.
 Needless to say magic numbers are a plague and should be avoided at all costs. When you cannot manage to find a reasonable explanation for why a number works, add an extensive comment explaining how you got there and why you think it works. Admitting you don’t know why something works is still more helpful to the next developer than them having to figure out what’s going on from scratch.
-Detail and extensive example: <https://css-tricks.com/magic-numbers-in-css/> 
+Detail and extensive example: [Magci Numbers in css](https://css-tricks.com/magic-numbers-in-css/)
 
 ### Colors
 #### Color Formats
@@ -369,7 +369,7 @@ Example:
 }
 ```
 #### Colors and Variables
-Reference: <https://davidwalsh.name/sass-color-variables-dont-suck> 
+Reference: [sass colot variables dont suck](https://davidwalsh.name/sass-color-variables-dont-suck)
 When using a color more than once, store it in a variable with a meaningful name representing the color.
 
 `$sass-pink: #b93a32;`
@@ -444,19 +444,19 @@ $breakpoints: (
 $breakpoints: ( small: 767px, medium: 992px, large: 1200px );
 ```
 Further Reading:
-<https://www.sitepoint.com/using-sass-maps/>
-<https://www.sitepoint.com/extra-map-functions-sass/> 
-<http://blog.grayghostvisuals.com/sass/real-sass-real-maps/>
+https://www.sitepoint.com/using-sass-maps/
+https://www.sitepoint.com/extra-map-functions-sass/
+http://blog.grayghostvisuals.com/sass/real-sass-real-maps/
 
 ### CSS Ruleset
 CSS ruleset should be written as follows as per https://cssguidelin.es/#anatomy-of-a-ruleset :
 related selectors on the same line; unrelated selectors on new lines;
-the opening brace ({) spaced from the last selector by a single space;
+the opening brace `{` spaced from the last selector by a single space;
 each declaration on its own new line;
-a space after the colon (:);
+a space after the colon `:`;
 a trailing semi-colon (;) at the end of all declarations;
-the closing brace (}) on its own new line;
-a new line after the closing brace }.
+the closing brace `}` on its own new line;
+a new line after the closing brace `}`.
 Example:
 ```
 // Yep
@@ -547,9 +547,9 @@ when styling an element because it happens to be contained within another specif
 ```
 
 Further Reading:
-<https://www.sitepoint.com/beware-selector-nesting-sass/> 
-<http://thesassway.com/intermediate/avoid-nested-selectors-for-more-modular-css> 
-<http://thesassway.com/beginner/the-inception-rule>
+https://www.sitepoint.com/beware-selector-nesting-sass/
+http://thesassway.com/intermediate/avoid-nested-selectors-for-more-modular-css
+http://thesassway.com/beginner/the-inception-rule
 
 ## Naming Conventions
 - All strings in classes are delimited with a hyphen (-)
