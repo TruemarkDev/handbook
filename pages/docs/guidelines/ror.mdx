@@ -14,7 +14,7 @@ Here, we plan to get insights into different gems used for Ruby on Rails applica
 
 #### Sidekiq
 
-Sidekiq is a full-featured and efficient `background job` framework for Ruby. It aims to be simple to integrate with any modern Rails application and provides much higher background processing performance than other existing solutions.
+Sidekiq is a full-featured and efficient `background job` framework for Ruby. It aims to be simple to integrate with any modern Rails application and provides much higher background processing performance than other existing solutions. It is designed for parallel execution so design your jobs so you can run those jobs in parallel. It has basic features for tuning concurrency (e.g. targeting a sidekiq process at a queue with a defined number of threads) but your system architecture is much simpler if you don't have such specialization. You can use a [connection pool](https://github.com/mperham/sidekiq/wiki/Advanced-Options#concurrency) to limit the overall number of connections to a resource-limited server if your Sidekiq processes are overwhelming it with traffic.
 
 This gem can be added to any rails project by either executing the global install command or adding the sidekiq gem in the gemfile.
 
@@ -40,7 +40,13 @@ Rubygems: [sidekiq gem](https://rubygems.org/gems/sidekiq)
 
 #### RuboCop
 
-RuboCop is a Ruby static code analyzer (a.k.a. `linter`) and code formatting tool. It aims to enforce the community-driven guidelines outlined in [Ruby Style Guide](https://rubystyle.guide/).
+RuboCop is a Ruby static code analyzer (a.k.a. `linter`) and code formatting tool. It aims to enforce the community-driven guidelines outlined in [Ruby Style Guide](https://rubystyle.guide/). It is extremely flexible and most aspects of its behavior can be tweaked via various configuration options. In practice RuboCop offers pretty much a lot of reasonable features on top of what you'd normally expect from a linter:
+
+ - Autocorrection of many of the code offenses it detects and robust code formatting capabilities.
+ - Multiple result formatters for both interactive use and for feeding data into other tools.
+ - Ability to have different configuration for different parts of your codebase.
+ - Ability to disable certain cops only for specific files or parts of files.
+ - It's easy to extend RuboCop with custom cops and formatters.
 
 This gem can be added to any rails project by either executing the global install command or adding the rubocop gem in the gemfile.
 
@@ -608,7 +614,7 @@ Rubygems: [swagger-docs gem](https://rubygems.org/gems/swagger-docs)
 
 ##### Rswag
 
-Rswag creates swagger tooling and generates beautiful API documentation for Rails APIs, including a UI to explore and test operations, directly from your rspec integration tests.
+Rswag creates swagger tooling and generates beautiful `API documentation` for Rails APIs, including a UI to explore and test operations, directly from your rspec integration tests. It extends rspec-rails "request specs" with a Swagger-based DSL for describing and testing API operations. You describe your API operations with a concise, intuitive syntax, and it automatically runs the tests. Once you have green tests, run a rake task to auto-generate corresponding Swagger files and expose them as YAML or JSON endpoints. Rswag also provides an embedded version of the awesome swagger-ui that's powered by the exposed file. This toolchain makes it seamless to go from integration specs, which you're probably doing in some form already, to living documentation for your API consumers.
 
 This gem can be added to any rails project by either executing the global install command or adding the rswag gem in the gemfile.
 
