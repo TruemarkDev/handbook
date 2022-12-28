@@ -42,11 +42,11 @@ Rubygems: [sidekiq gem](https://rubygems.org/gems/sidekiq)
 
 RuboCop is a Ruby static code analyzer (a.k.a. `linter`) and code formatting tool. It aims to enforce the community-driven guidelines outlined in [Ruby Style Guide](https://rubystyle.guide/). It is extremely flexible and most aspects of its behavior can be tweaked via various configuration options. In practice RuboCop offers pretty much a lot of reasonable features on top of what you'd normally expect from a linter:
 
- - Autocorrection of many of the code offenses it detects and robust code formatting capabilities.
- - Multiple result formatters for both interactive use and for feeding data into other tools.
- - Ability to have different configuration for different parts of your codebase.
- - Ability to disable certain cops only for specific files or parts of files.
- - It's easy to extend RuboCop with custom cops and formatters.
+- Autocorrection of many of the code offenses it detects and robust code formatting capabilities.
+- Multiple result formatters for both interactive use and for feeding data into other tools.
+- Ability to have different configuration for different parts of your codebase.
+- Ability to disable certain cops only for specific files or parts of files.
+- It's easy to extend RuboCop with custom cops and formatters.
 
 This gem can be added to any rails project by either executing the global install command or adding the rubocop gem in the gemfile.
 
@@ -72,7 +72,7 @@ Rubygems: [rubocop gem](https://rubygems.org/gems/rubocop)
 
 #### Whenever
 
-Whenever is a Ruby gem that provides a clean ruby syntax for writing and deploying `cron jobs`.
+Whenever is a Ruby gem that provides a clean ruby syntax for writing and deploying `cron jobs`. You can list installed cron jobs using `crontab -l`. Run `whenever --help` for a complete list of options for selecting the schedule to use, setting variables in the schedule, etc. Whenever ships with three pre-defined job types: command, runner, and rake. You can define your own with `job_type`.
 
 This gem can be added to any rails project by either executing the global install command or adding the whenever gem in the gemfile.
 
@@ -98,7 +98,7 @@ Rubygems: [whenever gem](https://rubygems.org/gems/whenever)
 
 #### PublicActivity
 
-PublicActivity provides an easy activity tracking for your `ActiveRecord models`, Mongoid 3 and MongoMapper models in Rails 5.0+. To simply put, it records what has been changed or created and gives you the ability to present those recorded activities to users.
+PublicActivity provides an easy `activity tracking` for your ActiveRecord models, Mongoid 3 and MongoMapper models in Rails 5.0+. To simply put, it records what has been changed or created and gives you the ability to present those recorded activities to users. By default public_activity uses Active Record and activities such as create, update and destroy are recorded in activities table. This is all you need to start recording activities for basic CRUD actions. You can also trigger custom activities by setting all your required parameters and triggering `create_activity` on the tracked model.
 
 This gem can be added to any rails project by either executing the global install command or adding the public_activity gem in the gemfile.
 
@@ -122,35 +122,9 @@ Rubygems: [public_activity gem](https://rubygems.org/gems/public_activity)
 
 <br />
 
-#### AWS SDK
-
-The official AWS SDK for Ruby which provides both resource oriented interfaces and API clients for `AWS services`.
-
-This gem can be added to any rails project by either executing the global install command or adding the aws-sdk gem in the gemfile.
-
-To `global install` aws-sdk
-
-```
-gem install aws-sdk
-```
-
-To add the module in the `gemfile`
-
-```
-gem 'aws-sdk', '~> 3.1'
-```
-
-The aforementioned aws-sdk gem version is subject to change so please find the official aws-sdk gem and github link below for latest version:
-
-Github: [aws-sdk docs](https://github.com/aws/aws-sdk-ruby)
-
-Rubygems: [aws-sdk gem](https://rubygems.org/gems/aws-sdk)
-
-<br />
-
 #### Httparty
 
-Httparty makes http fun again! There isn't a party like a httparty, because a httparty don't stop which makes querying and consuming `restful` web services dead easy.
+Httparty makes http fun again! There isn't a party like a httparty, because a httparty does not stop which makes querying and consuming `restful` web services extremely easy. It also includes the executable `httparty` which can be used to query web services and examine the resulting output. By default it will output the response as a pretty-printed Ruby object (to have a clear idea of the structure of output). This can also be overridden to output formatted XML or JSON. Execute `httparty --help` for all the options.
 
 This gem can be added to any rails project by either executing the global install command or adding the httparty gem in the gemfile.
 
@@ -176,7 +150,7 @@ Rubygems: [httparty gem](https://rubygems.org/gems/httparty)
 
 #### Roo
 
-Roo provides an interface to various `spreadsheet` files. It implements read access for all common spreadsheet types. It can handle: Excel 2007 - 2013 formats (xlsx, xlsm), LibreOffice / OpenOffice.org formats (ods), CSV, Excel 97, Excel 2002 XML, and Excel 2003 XML formats when using the roo-xls gem (xls, xml) and Google spreadsheets with read/write access when using roo-google.
+Roo provides an interface to various `spreadsheet` files. It implements read access for all common spreadsheet types and is capable to handle: Excel 2007 - 2013 formats (xlsx, xlsm), LibreOffice / OpenOffice.org formats (ods), CSV, Excel 97, Excel 2002 XML, and Excel 2003 XML formats when using the roo-xls gem (xls, xml) and Google spreadsheets with read/write access when using roo-google. Roo has the ability to export sheets using the formats such as sheet.to_csv, sheet.to_matrix, sheet.to_xml and sheet.to_yaml. However, it will only export the `default_sheet`.
 
 This gem can be added to any rails project by either executing the global install command or adding the roo gem in the gemfile.
 
@@ -752,6 +726,32 @@ Rubygems: [timecop gem](https://rubygems.org/gems/timecop)
 <br />
 
 ### Production
+
+#### AWS SDK
+
+The official AWS SDK for Ruby which provides both resource oriented interfaces and API clients for `AWS services`.
+
+This gem can be added to any rails project by either executing the global install command or adding the aws-sdk gem in the gemfile.
+
+To `global install` aws-sdk
+
+```
+gem install aws-sdk
+```
+
+To add the module in the `gemfile`
+
+```
+gem 'aws-sdk', '~> 3.1'
+```
+
+The aforementioned aws-sdk gem version is subject to change so please find the official aws-sdk gem and github link below for latest version:
+
+Github: [aws-sdk docs](https://github.com/aws/aws-sdk-ruby)
+
+Rubygems: [aws-sdk gem](https://rubygems.org/gems/aws-sdk)
+
+<br />
 
 #### Active Model Serializers
 
