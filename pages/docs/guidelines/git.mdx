@@ -132,23 +132,143 @@ Good git commit is always clean and provides the context for the commit and chan
 
 - Commit message should always be clean and explain the context on which it was written. It should clearly and concisely explain what is changed and why it is changed the way it has changed.
 
+```
+// Bad commit
+git commit -m "add feature"
+
+// Good commit
+git commit -m "Features/1020 - add functionality to sort the product
+
+Tasks done
+---
+
+- add and design select tag for selecting the sorting options for price and date added
+- add functionality to sort products according to the price and date added
+"
+```
+
 - Commit message should be standardize so that everyone who will be contributing will follow the same standard proposed by you or any organization.
 
-- Commit message should have a commit type so that it is clear to the reader on what context is he reading the commit for.
+```
+// Standardized commit message used by Truemark developers
+
+git commit -m "Features/1020 - add functionality to disable the add to cart button
+
+Tasks done
+---
+
+- add and design add to card button for each product.
+- add disabling functionality when no any product is available in the stock.
+"
+```
+
+- Commit message should have a commit type so that it is clear to the reader on what context they are reading the commit for.
+
+```
+// Bad commit (without commit type)
+git commit -m "fix issues"
+
+// Good commit (with commit type 'Fixes')
+git commit -m "Fixes/1678-fix issues in admin dashboard"
+```
 
 - Properly format your commit messages with title & body related with the task that you are working on.
 
+```
+// Bad commit -> (without title and body)
+git commit -m "integrate paypal to the system"
+
+// Good commit -> (with title and body)
+git commit -m "Features/1700-integrate paypal into the system for payment of the product
+
+Tasks done
+---
+
+- Add PayPal API for transactions done in the system
+- Add functionality to pay through PayPal after purchasing product.
+```
+
 - Separate the title of the commit from body with blank line.
+
+```
+// Bad commit
+git commit -m "Features/1767-generate movie ticket
+Tasks done
+---
+- add and design button with the text 'Generate Movie Ticket'
+- add functionality to generate the ticket in .pdf format.
+"
+
+// Good commit
+git commit -m "Features/1767-generate movie ticket
+
+Tasks done
+---
+
+- add and design button with the text 'Generate Movie Ticket'
+- add functionality to generate the ticket in .pdf format.
+"
+```
 
 - Make title short and descriptive. Don't copy & paste the user story from your project management tool.
 
+```
+// Bad commit
+git commit -m "Features/110-as a user I want to download movie ticket after generating it so that I will be able to show the ticket in entrance"
+
+// Good commit
+git commit -m "Features/110-automatically-download-movie-ticket"
+```
+
 - Always use the commit body to explain about the tasks you have done and if there is unique context in the code, always leave a message so that your fellow developer will also get familiar with it.
 
-- Use imperative mood for the commit title. Example - instead of writing the commit in declarative way like: I added the functionality to toggle between dark and night mode, you can write in imperative way like: Add functionality to toggle light and dark mode.
+```
+// Bad commit
+git commit -m "Features/1879-branding implementation"
+
+// Good commit
+git commit -m "Features/1879-custom branding implementation
+
+Tasks done
+---
+
+- added functionality to provide custom branding options to the users
+- added functionality to implement the custom branding upon change
+
+Note: Branding is only implemented in dashboard as of now. The configuration is not implemented for other pages.
+"
+```
+
+- Use imperative mood for the commit title rather than using declarative mood. Example - instead of writing the commit in declarative way like: I added the functionality to toggle between dark and night mode, you can write in imperative way like: Add functionality to toggle light and dark mode.
+
+```
+// Bad commit
+git commit -m "Features/177-I added the functionality to toggle between dark and night mode"
+
+// Good commit
+git commit -m "Features/177-add functionality to toggle light and dark mode"
+```
 
 - If you are working in a team, always look to the prior commits made by your fellow developers for standards and guidelines.
 
 - Always write the commit in direct manner without any filler words. You are writing to provide a context for changes done not an essay to win a prize.
+
+```
+// Bad commit
+git commit -m "Features/890-add functionality to generate the form using JSON
+
+Tasks done
+---
+
+- Basically created the JSON which contains all the information about the form to be generated
+- Was unable to generate the JSON at first but did it after many tries and finally completed the functionality.
+
+// Good commit
+git commit -m "Features/890-functionality to generate form using JSON
+
+- add JSON with all required form information
+- add functionality to generate form using JSON schema.
+```
 
 ### Different scenarios for commit message
 
