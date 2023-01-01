@@ -137,28 +137,26 @@ Good git commit is always clean and provides the context for the commit and chan
 git commit -m "add feature"
 
 // Good commit
-git commit -m "Features/1020 - add functionality to sort the product
+git commit -m "Features/1020 - Add functionality to sort the product
 
 Tasks done
 ---
 
-- add and design select tag for selecting the sorting options for price and date added
-- add functionality to sort products according to the price and date added
+- Add and design select tag for selecting the sorting options for price and date added
+- Add functionality to sort products according to the price and date added
 "
 ```
 
 - Commit message should be standardize so that everyone who will be contributing will follow the same standard proposed by you or any organization.
 
 ```
-// Standardized commit message used by Truemark developers
-
-git commit -m "Features/1020 - add functionality to disable the add to cart button
+git commit -m "Features/1020 - Add functionality to disable the add to cart button
 
 Tasks done
 ---
 
-- add and design add to card button for each product.
-- add disabling functionality when no any product is available in the stock.
+- Add and design add to card button for each product.
+- Add disabling functionality when no any product is available in the stock.
 "
 ```
 
@@ -166,20 +164,27 @@ Tasks done
 
 ```
 // Bad commit (without commit type)
-git commit -m "fix issues"
+git commit -m "Fix issues"
 
 // Good commit (with commit type 'Fixes')
-git commit -m "Fixes/1678-fix issues in admin dashboard"
+git commit -m "Fixes/1678-Issues in admin dashboard
+
+Tasks done
+---
+
+- Fixed logout issue from navigation bar
+- Fixed continuous rendering of loading spinner while filtering products
+"
 ```
 
 - Properly format your commit messages with title & body related with the task that you are working on.
 
 ```
 // Bad commit -> (without title and body)
-git commit -m "integrate paypal to the system"
+git commit -m "Integrate paypal to the system"
 
 // Good commit -> (with title and body)
-git commit -m "Features/1700-integrate paypal into the system for payment of the product
+git commit -m "Features/1700-Integrate paypal into the system for payment after purchase
 
 Tasks done
 ---
@@ -192,21 +197,21 @@ Tasks done
 
 ```
 // Bad commit
-git commit -m "Features/1767-generate movie ticket
+git commit -m "Features/1767-Generate movie ticket
 Tasks done
 ---
-- add and design button with the text 'Generate Movie Ticket'
-- add functionality to generate the ticket in .pdf format.
+- Add and design button with the text 'Generate Movie Ticket'
+- Add functionality to generate the ticket in .pdf format.
 "
 
 // Good commit
-git commit -m "Features/1767-generate movie ticket
+git commit -m "Features/1767-Generate movie ticket
 
 Tasks done
 ---
 
-- add and design button with the text 'Generate Movie Ticket'
-- add functionality to generate the ticket in .pdf format.
+- Add and design button with the text 'Generate Movie Ticket'
+- Add functionality to generate the ticket in .pdf format.
 "
 ```
 
@@ -214,26 +219,33 @@ Tasks done
 
 ```
 // Bad commit
-git commit -m "Features/110-as a user I want to download movie ticket after generating it so that I will be able to show the ticket in entrance"
+git commit -m "Features/110-As a user I want to download movie ticket after generating it so that I will be able to show the ticket in entrance"
 
 // Good commit
-git commit -m "Features/110-automatically-download-movie-ticket"
+git commit -m "Features/110-Automatically download movie ticket
+
+Tasks done
+---
+
+- Add functionality to navigate to /ticket/download page after ticket purchase
+- Add functionality to download the move ticket automatically after visiting the page
+"
 ```
 
 - Always use the commit body to explain about the tasks you have done and if there is unique context in the code, always leave a message so that your fellow developer will also get familiar with it.
 
 ```
 // Bad commit
-git commit -m "Features/1879-branding implementation"
+git commit -m "Features/1879-Branding implementation"
 
 // Good commit
-git commit -m "Features/1879-custom branding implementation
+git commit -m "Features/1879-Custom branding implementation
 
 Tasks done
 ---
 
-- added functionality to provide custom branding options to the users
-- added functionality to implement the custom branding upon change
+- Add functionality to provide custom branding options to the users
+- Add functionality to implement the custom branding upon change
 
 Note: Branding is only implemented in dashboard as of now. The configuration is not implemented for other pages.
 "
@@ -246,28 +258,48 @@ Note: Branding is only implemented in dashboard as of now. The configuration is 
 git commit -m "Features/177-I added the functionality to toggle between dark and night mode"
 
 // Good commit
-git commit -m "Features/177-add functionality to toggle light and dark mode"
+git commit -m "Features/177-Add functionality to toggle light and dark mode
+
+Tasks done
+---
+
+- Add and design toggle button to toggle between light and dark mode
+- Add functionality to toggle between light and dark mode after button click
+"
 ```
 
 - If you are working in a team, always look to the prior commits made by your fellow developers for standards and guidelines.
 
-- Always write the commit in direct manner without any filler words. You are writing to provide a context for changes done not an essay to win a prize.
+- Always write the commit in direct manner without any filler words and should write a commit that described the context you changed with your code.
 
 ```
 // Bad commit
-git commit -m "Features/890-add functionality to generate the form using JSON
+git commit -m "Features/890-Add functionality to generate the form using JSON
 
 Tasks done
 ---
 
 - Basically created the JSON which contains all the information about the form to be generated
 - Was unable to generate the JSON at first but did it after many tries and finally completed the functionality.
+"
 
 // Good commit
-git commit -m "Features/890-functionality to generate form using JSON
+git commit -m "Features/890-Functionality to generate form using JSON
 
-- add JSON with all required form information
-- add functionality to generate form using JSON schema.
+Tasks done
+---
+
+- Add JSON with all required form information
+- Add functionality to generate form using JSON schema
+"
+```
+
+- If there is no need for any commit body and only title is capable of explaining the context, you should not use one. This can be true for obvious work done which every developer is capable to understand.
+
+```
+// Example which does not need commit body.
+
+git commit -m "Initialize project according to company standard"
 ```
 
 ### Different scenarios for commit message
