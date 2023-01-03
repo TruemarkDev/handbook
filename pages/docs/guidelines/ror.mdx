@@ -176,7 +176,7 @@ Rubygems: [roo gem](https://rubygems.org/gems/roo)
 
 #### Overcommit
 
-Overcommit is a fully configurable and extendable utility to manage `Git hooks`.
+Overcommit is a fully configurable and extendable utility to manage `Git hooks`. In addition to supporting a wide variety of hooks that can be used across multiple repositories, one can also define hooks specific to a repository which are stored in source control. You can also easily [add your existing hook scripts](https://github.com/sds/overcommit#adding-existing-git-hooks) without having to write any Ruby code. You can run the same set of hooks that would be executed in a pre-commit hook against your entire repository by running `overcommit --run`. This makes it easy to have the checks verified by a CI service such as [Travis CI](https://travis-ci.com/), including custom hooks that you have written yourself.
 
 This gem can be added to any rails project by either executing the global install command or adding the overcommit gem in the gemfile.
 
@@ -342,7 +342,7 @@ Rubygems: [pronto-rubocop gem](https://rubygems.org/gems/pronto-rubocop)
 
 ##### Pagy
 
-Pagy gem is an agnostic pagination in plain ruby. It supports all kinds of pagination, works in any environment, with any collection such as DB or ORM, supports all kinds of CSS Frameworks, supports faster client-side rendering and has 100% of test coverage for Ruby, HTML and JavaScript E2E.
+Pagy gem is an agnostic `pagination` in plain ruby. It supports all kinds of pagination, works in any environment, with any collection such as DB or ORM, supports all kinds of CSS Frameworks, supports faster client-side rendering and has 100% of test coverage for Ruby, HTML and JavaScript E2E. Moreover, it is very modular and does not load any unnecessary code in your app and works with fast helpers or easy to edit [templates](https://ddnexus.github.io/pagy/docs/how-to/#use-templates).
 
 This gem can be added to any rails project by either executing the global install command or adding the pagy gem in the gemfile.
 
@@ -368,7 +368,7 @@ Rubygems: [pagy gem](https://rubygems.org/gems/pagy)
 
 ##### Kaminari
 
-Kaminari is a Scope & Engine based, clean, powerful, agnostic, customizable and sophisticated `paginator` for modern web app frameworks and ORMs.
+Kaminari is a Scope & Engine based, clean, powerful, agnostic, customizable and sophisticated `paginator` for modern web app frameworks and ORMs. Everything in Kaminari is method chainable with less "Hasheritis". You know, that's the modern Rails way. No special collection class or anything for the paginated values, instead using a general AR::Relation instance. So, of course you can chain any other conditions before or after the paginator scope.
 
 This gem can be added to any rails project by either executing the global install command or adding the kaminari gem in the gemfile.
 
@@ -394,7 +394,12 @@ Rubygems: [kaminari gem](https://rubygems.org/gems/kaminari)
 
 ##### Sass Rails
 
-Sass Rails gem provides official integration for rails projects with the `Sass` stylesheet language.
+Sass Rails gem provides official integration for rails projects with the `Sass` stylesheet language. To configure Sass via Rails set `config.sass` in your application and/or environment files to set configuration properties that will be passed to Sass. When in Rails, there is a special import syntax that allows you to glob imports relative to the folder of the stylesheet that is doing the importing.
+
+- `@import "mixins/*"` statement will import all the files in the mixins folder
+- `@import "mixins/**/*"` statement will import all the files in the mixins tree
+
+Any valid ruby glob may be used. The imports are sorted alphabetically.
 
 This gem can be added to any rails project by either executing the global install command or adding the sass-rails gem in the gemfile.
 
@@ -420,7 +425,7 @@ Rubygems: [sass-rails gem](https://rubygems.org/gems/sass-rails)
 
 ##### CKEditor
 
-CKEditor is a community maintained WYSIWYG `text editor` designed to simplify and enhance web content creation. It brings common word processing features directly to our web pages.
+CKEditor is a community maintained WYSIWYG `text editor` designed to simplify and enhance web content creation. It brings common word processing features directly to our web pages. For file upload support, you must generate the necessary file storage models. The currently supported backends are: ActiveRecord (active_storage, paperclip, carrierwave, dragonfly) and Mongoid (paperclip, carrierwave, dragonfly). All ckeditor models will be generated in the `app/models/ckeditor` directory. Models are autoloaded in Rails 4 so for earlier rails versions, they are needed to be added to the autoload path (in application.rb).
 
 This gem can be added to any rails project by either executing the global install command or adding the ckeditor gem in the gemfile.
 
