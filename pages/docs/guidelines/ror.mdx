@@ -343,6 +343,7 @@ Rubygems: [pronto-rubocop gem](https://rubygems.org/gems/pronto-rubocop)
 ##### Pagy
 
 Pagy gem is an agnostic `pagination` in plain ruby. It supports all kinds of pagination, works in any environment, with any collection such as DB or ORM, supports all kinds of CSS Frameworks, supports faster client-side rendering and has 100% of test coverage for Ruby, HTML and JavaScript E2E. Moreover, it is very modular and does not load any unnecessary code in your app and works with fast helpers or easy to edit [templates](https://ddnexus.github.io/pagy/docs/how-to/#use-templates).
+Here at Truemark, we prefer using pagy over kaminari because its efficiency amounts to hundreds of times more than Kaminari in normal UI conditions, and it should still be many tens of time more in API conditions even with minimal pagination information in the response.
 
 This gem can be added to any rails project by either executing the global install command or adding the pagy gem in the gemfile.
 
@@ -368,7 +369,7 @@ Rubygems: [pagy gem](https://rubygems.org/gems/pagy)
 
 ##### Kaminari
 
-Kaminari is a Scope & Engine based, clean, powerful, agnostic, customizable and sophisticated `paginator` for modern web app frameworks and ORMs. Everything in Kaminari is method chainable with less "Hasheritis". You know, that's the modern Rails way. No special collection class or anything for the paginated values, instead using a general AR::Relation instance. So, of course you can chain any other conditions before or after the paginator scope.
+Kaminari is a Scope & Engine based, clean, powerful, agnostic, customizable and sophisticated `paginator` for modern web app frameworks and ORMs. Everything in Kaminari is method chainable with less "Hasheritis". You know, that's the modern Rails way. No special collection class or anything for the paginated values, instead using a general AR::Relation instance. So, of course you can chain any other conditions before or after the paginator scope. Kaminari is an alternative to pagy and was extensively used here at Truemark before moving on with the benefits of pagy.
 
 This gem can be added to any rails project by either executing the global install command or adding the kaminari gem in the gemfile.
 
@@ -451,7 +452,11 @@ Rubygems: [ckeditor gem](https://rubygems.org/gems/ckeditor)
 
 ##### Liquid
 
-Liquid is a secure, non-evaling end user `template engine` which was written with very specific requirements to produce an aesthetic markup.
+Liquid is a secure, non-evaling end user `template engine` which was written with very specific requirements to produce an aesthetic markup with the requirements enlisted below:
+
+- It has to produce good looking and simple markup.
+- It needs to be non evaling and secure. Liquid templates are created such that users can edit them with a restraint to not allow users run any sort of insecure code on your server.
+- It has to be stateless. Compile and render steps are separated so that the expensive parsing and compiling can be done once and later on you can just render it passing in a hash with local variables and objects which offer a way to render templates directly from the database.
 
 This gem can be added to any rails project by either executing the global install command or adding the liquid gem in the gemfile.
 
@@ -734,7 +739,7 @@ Rubygems: [timecop gem](https://rubygems.org/gems/timecop)
 
 #### AWS SDK
 
-The official AWS SDK for Ruby which provides both resource oriented interfaces and API clients for `AWS services`.
+The official AWS SDK for Ruby which provides both resource oriented interfaces and API clients for `AWS services`. To set up aws-sdk you will need to configure credentials and a region, either in configuration files or environment variables, to avail API calls. It is recommended that you provide these via your environment. This makes it easier to rotate credentials and it keeps your secrets out of version control. You can also configure default credentials and the region via the `Aws.config` hash. The Aws.config hash takes precedence over environment variables.
 
 This gem can be added to any rails project by either executing the global install command or adding the aws-sdk gem in the gemfile.
 
@@ -1035,7 +1040,7 @@ Rubygems: [cancancan gem](https://rubygems.org/gems/cancancan)
 
 ##### Font Awesome Rails
 
-Font Awesome Rails provides the Font-Awesome `web fonts` and stylesheets as a Rails engine for use with the asset pipeline.
+Font Awesome Rails provides the [Font-Awesome](https://fontawesome.com/) web `fonts and stylesheets` as a Rails engine for use with the asset pipeline. When building a Rails engine that needs font-awesome-rails as a dependency, be sure to require "font-awesome-rails" somewhere during the initialization of your engine otherwise, rails won't automatically pick up the load path of the font-awesome-rails assets and helpers.
 
 This gem can be added to any rails project by either executing the global install command or adding the font-awesome-rails gem in the gemfile.
 
@@ -1061,7 +1066,9 @@ Rubygems: [font-awesome-rails gem](https://rubygems.org/gems/font-awesome-rails)
 
 ##### Bootstrap
 
-Bootstrap is a rubygem for Rails, Sprockets, Hanami, etc. It is the most popular HTML, CSS, and JavaScript framework for developing responsive, mobile first projects on the web.
+Bootstrap is a rubygem for Rails, Sprockets, Hanami, etc. It is the most popular HTML, CSS, and JavaScript framework for developing responsive, mobile first projects on the web. If you have just generated a new rails app, it may come with a `.css` file so ensure that the file has `.scss` extension (or `.sass` for Sass syntax). If `.css` file exists, it will be served instead of Sass, so you might want to rename it. Then, remove all the `*= require` and `*= require_tree` statements from the Sass file and use `@import` to import Sass files instead.
+
+> Do not use `*= require` in Sass or your other stylesheets will not be able to access the Bootstrap mixins and variables.
 
 This gem can be added to any rails project by either executing the global install command or adding the bootstrap gem in the gemfile.
 
