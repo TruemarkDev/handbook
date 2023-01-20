@@ -1,0 +1,150 @@
+---
+title: Daily Standup Guidelines
+section: Guidelines
+order: 6
+---
+
+# Daily Standup Format and Guidelines
+
+Here, we will discuss about daily standup format and guidelines for tasks done in particular day at Truemark. The format and guidelines discussed in this section should be followed by each member at Truemark Technology.
+
+Daily standup aids in the team collaboration and project success. Providing daily standup for the task performed throughout the day provides insights to all other team members about the project's status and requirements. Detailed and informative standup will guide team and project towards success as plans and goals can be made for certain team member according to the nature of task they have been doing. It also helps the team and project manager to improvise in certain task if it doesn't go as planned. So, we ask each member of the company to provide their daily standup explaining about the task they did, are doing and going to perform. Daily standup also shines great in explaining some issue in the task so if in any situation, any other team member faced the same issue, they can collaborate with the member who has already faced and solved it.
+
+Daily standup will be great benefit if it follows some standards so that each standup looks same and person reading should not change their state of mind for reading and understanding it. It can worsen the situation if every member started to write standup in their own manner. So, to eliminate the confusion and maintaining its similar nature throughout every standup written, we have certain guidelines in place which must be followed by each team member who is writing the standup.
+
+Daily Standup must follow the following standard:
+
+[**TODAY (date)**](/docs/guidelines/daily-standup#today)
+
+- Completed task 1
+- Completed task 2
+- PR: Link (Please review { mention reviewers })
+
+[**TOMORROW**](/docs/guidelines/daily-standup#tomorrow)
+
+- Work on task X
+
+[**BLOCKERS**](/docs/guidelines/daily-standup#blockers)
+
+- If any
+
+### TODAY
+
+This section of your standup will be about the tasks that you did throughout the day. You need to provide detailed information about the tasks that you did in the day along with the issues if you faced some issue. This section should also describe about some unique scenarios that other developers and project manager should be aware of, if there are any. After providing all the tasks detail and insights, you need to post the Pull Request (PR) you made for that particular task.
+
+### TOMORROW
+
+This section in the standup is for the task that you will be performing tomorrow. This section is for reminding the tasks to yourself and also for team members to know about the task you will be doing. You can list out the tasks priority-wise from high to low for your reminder and efficiency. You should be sure to complete the task for listing out here but if the task listed out doesn't go as planned then you should aware your team members about the situation immediately so, they can improvise accordingly.
+
+### BLOCKERS
+
+There can be scenarios where the task you are doing is blocked due to different reasons. All the reasons that resulted in your task being blocked will go in this section. This is a great way to justify your delay in task if you are questioned about it.
+
+Now as we have already seen about different sections present in the daily standup, lets have a look at examples for how to actually write daily standup. We will be discussing about good and bad standup below. Let's assume we are working on project called "Padhandash".
+
+### Bad Standup
+
+```
+// Bad standup
+
+Today (Friday - January 20th)
+---
+Padhandash:
+  - Added routes
+  - Worked on calling backend
+  - Fetched data in home
+  - Fetched course
+  - PR: https://gitlab.com/padhandash/padhandash-frontend/-/merge_requests/403
+
+Tomorrow
+---
+Padhandash:
+  - Meeting with team
+  - Update current design
+  - Implement filter functionality
+
+Blockers:
+  - Backend issue
+```
+
+Now, lets analyze the above standup.
+
+In the above standup provided by the team member, all sections are vague and doesn't provide context of what they are working. The standup message doesn't contain enough explanation of the task done and is too vague to understand by any team member. These kind of standup provides uncertainty later to the project manager and senior for task distribution as it does'nt provide any context on what they have worked on. Also, PR is posted but they haven't asked for review from any team member or team lead.
+
+### Good Standup
+
+```
+// Good standup
+
+Today (Friday - January 20th)
+---
+Padhandash:
+  - Added routes for courses and home section.
+  - Fetched data from backend to get relevant courses and displayed it in the home page.
+  - Fetched data from backend to get course detail and displayed certain course's detail in the course detail page.
+  - PR: https://gitlab.com/padhandash/padhandash-frontend/-/merge_requests/403 (Review is requested from Brendan Eich for design implementation and Dan Abramov for feature implementation)
+
+Tomorrow
+---
+Padhandash:
+  - Demo meeting for the design and feature implementation with team members.
+  - Update existing design implementation of course card with newest design implemented.
+  - Implement filter functionality for course according to different filter attributes like:
+    - Course duration
+    - User ratings
+    - Education category
+
+Blockers
+---
+  - None
+```
+
+Now, by analyzing the good standup we can say that it is really great and written in detail. It provides all the tasks one has worked throughout the day, what are they going to perform tomorrow and what were the blockers while performing the task.
+
+Let's see standup with blockers and without blockers now. It will provide insights upon the context where one should mention about the blocker.
+
+### Standup With Blockers
+
+```
+// Standup with blockers
+
+Today (Friday - January 20th)
+---
+Padhandash:
+  - Demo meeting with team members for features implemented.
+  - Updated design for course card.
+  - Added functionality to filter courses according to course duration and education category.
+  - PR: https://gitlab.com/padhandash/padhandash-frontend/-/merge_requests/403 (Review is requested from Brendan Eich for design implementation and Dan Abramov for feature implementation)
+
+Tomorrow
+---
+Padhandash:
+  - Add functionality to filter courses according to the given user's rating.
+  - Work on design implementation of instructor's detail page.
+
+Blockers
+---
+
+  - Unprocessable entity error with status 422 from backend while sending filter data for user's rating.
+```
+
+### Standup Without Blockers
+
+```
+// Standup without blockers
+
+Today (Monday - February 6th)
+---
+Padhandash:
+  - Added functionality to filter courses according to the course rating.
+  - Implemented design functionality for instructor's detail page.
+
+Tomorrow
+---
+Padhandash:
+  - Sprint planning and demo meeting for implemented features with the team.
+
+Blockers
+---
+ - None
+```
