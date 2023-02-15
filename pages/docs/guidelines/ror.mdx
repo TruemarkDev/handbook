@@ -1,0 +1,1182 @@
+---
+title: Ruby on Rails
+section: Guidelines
+order: 2
+---
+
+# Ruby on Rails
+
+## Standard Gems
+
+Here, we plan to get insights into different gems used for Ruby on Rails application development phase, testing phase and the staging/production environment along with the installation process to add those gems into our projects.
+
+### Development
+
+#### Sidekiq
+
+Sidekiq is a full-featured and efficient `background job` framework for Ruby. It aims to be simple to integrate with any modern Rails application and provides much higher background processing performance than other existing solutions. It is designed for parallel execution so design your jobs so you can run those jobs in parallel. It has basic features for tuning concurrency (e.g. targeting a sidekiq process at a queue with a defined number of threads) but your system architecture is much simpler if you don't have such specialization. You can use a [connection pool](https://github.com/mperham/sidekiq/wiki/Advanced-Options#concurrency) to limit the overall number of connections to a resource-limited server if your Sidekiq processes are overwhelming it with traffic.
+
+This gem can be added to any rails project by either executing the global install command or adding the sidekiq gem in the gemfile.
+
+To `global install` sidekiq
+
+```
+gem install sidekiq
+```
+
+To add the module in the `gemfile`
+
+```
+gem 'sidekiq', '~> 7.0', '>= 7.0.2'
+```
+
+The aforementioned sidekiq version is subject to change so please find the official sidekiq gem and github link below for latest version:
+
+Github: [sidekiq docs](https://github.com/mperham/sidekiq/wiki)
+
+Rubygems: [sidekiq gem](https://rubygems.org/gems/sidekiq)
+
+<br />
+
+#### RuboCop
+
+RuboCop is a Ruby static code analyzer (a.k.a. `linter`) and code formatting tool. It aims to enforce the community-driven guidelines outlined in [Ruby Style Guide](https://rubystyle.guide/). It is extremely flexible and most aspects of its behavior can be tweaked via various configuration options. In practice RuboCop offers pretty much a lot of reasonable features on top of what you'd normally expect from a linter:
+
+- Autocorrection of many of the code offenses it detects and robust code formatting capabilities.
+- Multiple result formatters for both interactive use and for feeding data into other tools.
+- Ability to have different configuration for different parts of your codebase.
+- Ability to disable certain cops only for specific files or parts of files.
+- It's easy to extend RuboCop with custom cops and formatters.
+
+This gem can be added to any rails project by either executing the global install command or adding the rubocop gem in the gemfile.
+
+To `global install` rubocop
+
+```
+gem install rubocop
+```
+
+To add the module in the `gemfile`
+
+```
+gem 'rubocop', '~> 1.40'
+```
+
+The aforementioned rubocop version is subject to change so please find the official rubocop gem and github link below for latest version:
+
+Github: [rubocop docs](https://docs.rubocop.org/rubocop/1.40/)
+
+Rubygems: [rubocop gem](https://rubygems.org/gems/rubocop)
+
+<br />
+
+#### Whenever
+
+Whenever is a Ruby gem that provides a clean ruby syntax for writing and deploying `cron jobs`. You can list installed cron jobs using `crontab -l`. Run `whenever --help` for a complete list of options for selecting the schedule to use, setting variables in the schedule, etc. Whenever ships with three pre-defined job types: command, runner, and rake. You can define your own with `job_type`.
+
+This gem can be added to any rails project by either executing the global install command or adding the whenever gem in the gemfile.
+
+To `global install` whenever
+
+```
+gem install whenever
+```
+
+To add the module in the `gemfile`
+
+```
+gem 'whenever', '~> 1.0'
+```
+
+The aforementioned whenever gem version is subject to change so please find the official whenever gem and github link below for latest version:
+
+Github: [whenever docs](https://github.com/javan/whenever)
+
+Rubygems: [whenever gem](https://rubygems.org/gems/whenever)
+
+<br />
+
+#### PublicActivity
+
+PublicActivity provides an easy `activity tracking` for your ActiveRecord models, Mongoid 3 and MongoMapper models in Rails 5.0+. To simply put, it records what has been changed or created and gives you the ability to present those recorded activities to users. By default public_activity uses Active Record and activities such as create, update and destroy are recorded in activities table. This is all you need to start recording activities for basic CRUD actions. You can also trigger custom activities by setting all your required parameters and triggering `create_activity` on the tracked model.
+
+This gem can be added to any rails project by either executing the global install command or adding the public_activity gem in the gemfile.
+
+To `global install` public_activity
+
+```
+gem install public_activity
+```
+
+To add the module in the `gemfile`
+
+```
+gem 'public_activity', '~> 2.0', '>= 2.0.2'
+```
+
+The aforementioned public_activity gem version is subject to change so please find the official public_activity gem and github link below for latest version:
+
+Github: [public_activity docs](https://github.com/public-activity/public_activity)
+
+Rubygems: [public_activity gem](https://rubygems.org/gems/public_activity)
+
+<br />
+
+#### Httparty
+
+Httparty makes http fun again! There isn't a party like a httparty, because a httparty does not stop which makes querying and consuming `restful` web services extremely easy. It also includes the executable `httparty` which can be used to query web services and examine the resulting output. By default it will output the response as a pretty-printed Ruby object (to have a clear idea of the structure of output). This can also be overridden to output formatted XML or JSON. Execute `httparty --help` for all the options.
+
+This gem can be added to any rails project by either executing the global install command or adding the httparty gem in the gemfile.
+
+To `global install` httparty
+
+```
+gem install httparty
+```
+
+To add the module in the `gemfile`
+
+```
+gem 'httparty', '~> 0.20.0'
+```
+
+The aforementioned httparty gem version is subject to change so please find the official httparty gem and github link below for latest version:
+
+Github: [httparty docs](https://github.com/jnunemaker/httparty)
+
+Rubygems: [httparty gem](https://rubygems.org/gems/httparty)
+
+<br />
+
+#### Roo
+
+Roo provides an interface to various `spreadsheet` files. It implements read access for all common spreadsheet types and is capable to handle: Excel 2007 - 2013 formats (xlsx, xlsm), LibreOffice / OpenOffice.org formats (ods), CSV, Excel 97, Excel 2002 XML, and Excel 2003 XML formats when using the roo-xls gem (xls, xml) and Google spreadsheets with read/write access when using roo-google. Roo has the ability to export sheets using the formats such as sheet.to_csv, sheet.to_matrix, sheet.to_xml and sheet.to_yaml. However, it will only export the `default_sheet`.
+
+This gem can be added to any rails project by either executing the global install command or adding the roo gem in the gemfile.
+
+To `global install` roo
+
+```
+gem install roo
+```
+
+To add the module in the `gemfile`
+
+```
+gem 'roo', '~> 2.9'
+```
+
+The aforementioned roo gem version is subject to change so please find the official roo gem and github link below for latest version:
+
+Github: [roo docs](https://github.com/roo-rb/roo)
+
+Rubygems: [roo gem](https://rubygems.org/gems/roo)
+
+<br />
+
+#### Overcommit
+
+Overcommit is a fully configurable and extendable utility to manage `Git hooks`. In addition to supporting a wide variety of hooks that can be used across multiple repositories, one can also define hooks specific to a repository which are stored in source control. You can also easily [add your existing hook scripts](https://github.com/sds/overcommit#adding-existing-git-hooks) without having to write any Ruby code. You can run the same set of hooks that would be executed in a pre-commit hook against your entire repository by running `overcommit --run`. This makes it easy to have the checks verified by a CI service such as [Travis CI](https://travis-ci.com/), including custom hooks that you have written yourself.
+
+This gem can be added to any rails project by either executing the global install command or adding the overcommit gem in the gemfile.
+
+To `global install` overcommit
+
+```
+gem install overcommit
+```
+
+To add the module in the `gemfile`
+
+```
+gem 'overcommit', '~> 0.59.1'
+```
+
+The aforementioned overcommit version is subject to change so please find the official overcommit gem and github link below for latest version:
+
+Github: [overcommit docs](https://github.com/sds/overcommit)
+
+Rubygems: [overcommit gem](https://rubygems.org/gems/overcommit)
+
+<br />
+
+#### External API Requests
+
+##### Rest Client
+
+A simple HTTP and REST client for Ruby, inspired by the Sinatra microframework style of specifying get, put, post and delete actions in a REST web service. In the high level helpers, only POST, PATCH, and PUT take a payload argument. To pass a payload with other HTTP verbs or to pass more advanced options, use `RestClient::Request.execute` instead. The top level helper methods like `RestClient.get` accept a headers hash as their last argument and don't allow passing more complex options. But these helpers are just thin wrappers around `RestClient::Request.execute`.
+
+This gem can be added to any rails project by either executing the global install command or adding the rest-client gem in the gemfile.
+
+To `global install` rest-client
+
+```
+gem install rest-client
+```
+
+To add the module in the `gemfile`
+
+```
+gem 'rest-client', '~> 2.1'
+```
+
+The aforementioned rest-client version is subject to change so please find the official rest-client gem and github link below for latest version:
+
+Github: [rest-client docs](https://github.com/rest-client/rest-client)
+
+Rubygems: [rest-client gem](https://rubygems.org/gems/rest-client)
+
+<br />
+
+#### Environment Variables Manager
+
+##### Figaro
+
+Figaro strives to keep API keys, environment variables and other configurations off your git repositories in a fairly easy to accomplish manner. It was written to make it easy to securely configure rails applications since configuration values often include sensitive information. With figaro one can keep more flexibilty to change the configuration implementation based on environment variables.
+
+This gem can be added to any rails project by either executing the global install command or adding the figaro gem in the gemfile.
+
+To `global install` figaro
+
+```
+gem install figaro
+```
+
+To add the module in the `gemfile`
+
+```
+gem 'figaro', '~> 1.2'
+```
+
+The aforementioned figaro version is subject to change so please find the official figaro gem and github link below for latest version:
+
+Github: [figaro docs](https://github.com/laserlemon/figaro)
+
+Rubygems: [figaro gem](https://rubygems.org/gems/figaro)
+
+<br />
+
+##### Config_for
+
+There isn't just figaro which offers a secure way to store `configuation data` but a custom yml file in combination with Rails 4.2 feature `config_for` also offers nearly the same benefits. Even though figaro offers the benefits that are far more lucrative but it still is an additional dependency while config_for is a built-in rails feature which tends to be a more simple solution than adding an extra gem dependency.
+
+To find more about the feature usage please visit the link to the configuration guide given below:
+
+Configuration Guide: [config_for](https://www.justinweiss.com/articles/the-lesser-known-features-in-rails-4-dot-2/)
+
+<br />
+
+##### Rails Credentials
+
+Rails yet another built-in feature offers a way to store api keys and secrets in an encrypted file which cannot be edited directly. Rails uses `config/master.key` or alternatively looks for the environment variable `ENV["RAILS_MASTER_KEY"]` to encrypt the credentials file. Because the credentials file is encrypted, it can be stored in version control, as long as the master key is kept safe. By default, the credentials file contains the application's secret_key_base. It can also be used to store other secrets such as access keys for external APIs.
+
+To find more about the feature usage please visit the official rails guide given below:
+
+Rails Guide: [rails_credentials](https://edgeguides.rubyonrails.org/security.html)
+
+<br />
+
+#### Pry-byebug
+
+Pry-byebug gem adds step-by-step `debugging` and stack navigation capabilities to [pry](https://pry.github.io/) using [byebug](https://github.com/deivid-rodriguez/byebug). While pry aims to be more than an IRB replacement and can be invoked in the middle of a running program to open a Pry session which can then be used to debug, implement developer consoles or apply hot patches, byebug offers a more simple to use and feature rich debugging. Byebug uses the TracePoint API for execution control and the Debug Inspector API for call stack navigation.
+
+To use pry-byebug, one needs to invoke pry normally and there is no need to start your script or app differently. Execution will stop in the first statement after your `binding.pry`. It also adds 'step', 'next', 'finish', 'continue' and 'break' commands to control execution.
+
+This gem can be added to any rails project by either executing the global install command or adding the pry-byebug gem in the gemfile.
+
+To `global install` pry-byebug
+
+```
+gem install pry-byebug
+```
+
+To add the module in the `gemfile`
+
+```
+gem 'pry-byebug', '~> 3.10', '>= 3.10.1'
+```
+
+The aforementioned pry-byebug version is subject to change so please find the official pry-byebug gem and github link below for latest version:
+
+Github: [pry-byebug docs](https://github.com/deivid-rodriguez/pry-byebug)
+
+Rubygems: [pry-byebug gem](https://rubygems.org/gems/pry-byebug)
+
+<br />
+
+#### Pronto
+
+Pronto runs analysis quickly by checking only the relevant changes. Although designed for use with GitHub `pull requests`, it also functions locally and has integrations with GitLab and Bitbucket. It is a perfect gem if you want to find out quickly if a branch brings changes that follow your style guide, are DRY, don't introduce security issues and more. While pronto runs the checks on a diff between the current HEAD and the provided commit (with master being the default), pronto-rubocop (also a ruby code analyzer) is a pronto runner for [RuboCop](https://github.com/bbatsov/rubocop) that ensures the committed code abides by the set of rules defined by rubocop.
+
+Pronto along with pronto-rubocop can be bundled together and added to any rails project by either executing the global install command or adding the gems in the gemfile.
+
+To `global install` pronto & pronto-rubocop
+
+```
+gem install pronto
+gem install pronto-rubocop
+gem install pronto-flay
+```
+
+To add the modules in the `gemfile`
+
+```
+gem 'pronto', '~> 0.11.0'
+gem 'pronto-rubocop', require: false
+gem 'pronto-flay', require: false
+```
+
+The aforementioned pronto version is subject to change so please find the official pronto gem and github link below for latest version:
+
+Github: [pronto docs](https://github.com/prontolabs/pronto)
+
+Rubygems: [pronto gem](https://rubygems.org/gems/pronto)
+
+Github: [pronto-rubocop docs](https://github.com/prontolabs/pronto-rubocop)
+
+Rubygems: [pronto-rubocop gem](https://rubygems.org/gems/pronto-rubocop)
+
+<br />
+
+#### User Interface (UI)
+
+##### Pagy
+
+Pagy gem is an agnostic `pagination` in plain ruby. It supports all kinds of pagination, works in any environment, with any collection such as DB or ORM, supports all kinds of CSS Frameworks, supports faster client-side rendering and has 100% of test coverage for Ruby, HTML and JavaScript E2E. Moreover, it is very modular and does not load any unnecessary code in your app and works with fast helpers or easy to edit [templates](https://ddnexus.github.io/pagy/docs/how-to/#use-templates).
+Here at Truemark, we prefer using pagy over kaminari because its efficiency amounts to hundreds of times more than Kaminari in normal UI conditions, and it should still be many tens of time more in API conditions even with minimal pagination information in the response.
+
+This gem can be added to any rails project by either executing the global install command or adding the pagy gem in the gemfile.
+
+To `global install` pagy
+
+```
+gem install pagy
+```
+
+To add the module in the `gemfile`
+
+```
+gem 'pagy', '~> 5.10', '>= 5.10.1'
+```
+
+The aforementioned pagy version is subject to change so please find the official pagy gem and github link below for latest version:
+
+Github: [pagy docs](https://github.com/ddnexus/pagy)
+
+Rubygems: [pagy gem](https://rubygems.org/gems/pagy)
+
+<br />
+
+##### Kaminari
+
+Kaminari is a Scope & Engine based, clean, powerful, agnostic, customizable and sophisticated `paginator` for modern web app frameworks and ORMs. Everything in Kaminari is method chainable with less "Hasheritis". You know, that's the modern Rails way. No special collection class or anything for the paginated values, instead using a general AR::Relation instance. So, of course you can chain any other conditions before or after the paginator scope. Kaminari is an alternative to pagy and was extensively used here at Truemark before moving on with the benefits of pagy.
+
+This gem can be added to any rails project by either executing the global install command or adding the kaminari gem in the gemfile.
+
+To `global install` kaminari
+
+```
+gem install kaminari
+```
+
+To add the module in the `gemfile`
+
+```
+gem 'kaminari', '~> 1.2', '>= 1.2.2'
+```
+
+The aforementioned kaminari version is subject to change so please find the official kaminari gem and github link below for latest version:
+
+Github: [kaminari docs](https://github.com/kaminari/kaminari)
+
+Rubygems: [kaminari gem](https://rubygems.org/gems/kaminari)
+
+<br />
+
+##### Sass Rails
+
+Sass Rails gem provides official integration for rails projects with the `Sass` stylesheet language. To configure Sass via Rails set `config.sass` in your application and/or environment files to set configuration properties that will be passed to Sass. When in Rails, there is a special import syntax that allows you to glob imports relative to the folder of the stylesheet that is doing the importing.
+
+- `@import "mixins/*"` statement will import all the files in the mixins folder
+- `@import "mixins/**/*"` statement will import all the files in the mixins tree
+
+Any valid ruby glob may be used. The imports are sorted alphabetically.
+
+This gem can be added to any rails project by either executing the global install command or adding the sass-rails gem in the gemfile.
+
+To `global install` sass-rails
+
+```
+gem install sass-rails
+```
+
+To add the module in the `gemfile`
+
+```
+gem 'sass-rails', '~> 6.0'
+```
+
+The aforementioned sass-rails version is subject to change so please find the official sass-rails gem and github link below for latest version:
+
+Github: [sass-rails docs](https://github.com/rails/sass-rails)
+
+Rubygems: [sass-rails gem](https://rubygems.org/gems/sass-rails)
+
+<br />
+
+##### CKEditor
+
+CKEditor is a community maintained WYSIWYG `text editor` designed to simplify and enhance web content creation. It brings common word processing features directly to our web pages. For file upload support, you must generate the necessary file storage models. The currently supported backends are: ActiveRecord (active_storage, paperclip, carrierwave, dragonfly) and Mongoid (paperclip, carrierwave, dragonfly). All ckeditor models will be generated in the `app/models/ckeditor` directory. Models are autoloaded in Rails 4 so for earlier rails versions, they are needed to be added to the autoload path (in application.rb).
+
+This gem can be added to any rails project by either executing the global install command or adding the ckeditor gem in the gemfile.
+
+To `global install` ckeditor
+
+```
+gem install ckeditor
+```
+
+To add the module in the `gemfile`
+
+```
+gem 'ckeditor', '~> 5.1', '>= 5.1.1'
+```
+
+The aforementioned ckeditor version is subject to change so please find the official ckeditor gem and github link below for latest version:
+
+Github: [ckeditor docs](https://github.com/galetahub/ckeditor)
+
+Rubygems: [ckeditor gem](https://rubygems.org/gems/ckeditor)
+
+<br />
+
+##### Liquid
+
+Liquid is a secure, non-evaling end user `template engine` which was written with very specific requirements to produce an aesthetic markup with the requirements enlisted below:
+
+- It has to produce good looking and simple markup.
+- It needs to be non evaling and secure. Liquid templates are created such that users can edit them with a restraint to not allow users run any sort of insecure code on your server.
+- It has to be stateless. Compile and render steps are separated so that the expensive parsing and compiling can be done once and later on you can just render it passing in a hash with local variables and objects which offer a way to render templates directly from the database.
+
+This gem can be added to any rails project by either executing the global install command or adding the liquid gem in the gemfile.
+
+To `global install` liquid
+
+```
+gem install liquid
+```
+
+To add the module in the `gemfile`
+
+```
+gem 'liquid', '~> 5.4'
+```
+
+The aforementioned liquid version is subject to change so please find the official liquid gem and github link below for latest version:
+
+Github: [liquid docs](https://github.com/Shopify/liquid)
+
+Rubygems: [liquid gem](https://rubygems.org/gems/liquid)
+
+<br />
+
+#### Email
+
+##### Letter Opener
+
+Letter Opener is a gem that allows developers `preview email` in the default browser instead of sending it. This means you do not need to set up email delivery in your development environment, and you no longer need to worry about sending a test email to someone else's address accidentally. The messages are stored in `tmp/letter_opener`. If you want to change application that will be used to open your emails you have to override `LAUNCHY_APPLICATION` environment variable or set `Launchy.application` in the initializer.
+
+This gem can be added to any rails project by either executing the global install command or adding the letter_opener gem in the gemfile.
+
+To `global install` letter_opener
+
+```
+gem install letter_opener
+```
+
+To add the module in the `gemfile`
+
+```
+gem 'letter_opener', '~> 1.8', '>= 1.8.1'
+```
+
+The aforementioned letter_opener version is subject to change so please find the official letter_opener gem and github link below for latest version:
+
+Github: [letter_opener docs](https://github.com/ryanb/letter_opener)
+
+Rubygems: [letter_opener gem](https://rubygems.org/gems/letter_opener)
+
+<br />
+
+### Testing
+
+After a feature has been completed, it has to be documented and tested to ensure that the code works as expected for a behavior and use case. It always starts with writing a failing test case and then refactoring just enough code to pass the test.
+
+<br />
+
+#### Test objects
+
+##### FactoryBot
+
+FactoryBot is a fixtures replacement with a straightforward definition syntax, support for multiple `build strategies` such as saved & unsaved instances, attribute hashes, and `stubbed objects`, and support for multiple factories for the same class, including factory inheritance.
+
+This gem can be added to any rails project by either executing the global install command or adding the factory_bot gem in the gemfile.
+
+To `global install` factory_bot
+
+```
+gem install factory_bot
+```
+
+To add the module in the `gemfile`
+
+```
+gem 'factory_bot', '~> 6.2', '>= 6.2.1'
+```
+
+The aforementioned factory_bot version is subject to change so please find the official factory_bot gem and github link below for latest version:
+
+Github: [factory_bot docs](https://github.com/thoughtbot/factory_bot)
+
+Rubygems: [factory_bot gem](https://rubygems.org/gems/factory_bot)
+
+<br />
+
+##### Faker
+
+Faker, a port of Data::Faker from Perl, is used to easily generate fake data such as names, addresses, phone numbers, etc. It helps us generate realistic test data, and populate our database with more than a couple of records while we're doing development.
+
+This gem can be added to any rails project by either executing the global install command or adding the faker gem in the gemfile.
+
+To `global install` faker
+
+```
+gem install faker
+```
+
+To add the module in the `gemfile`
+
+```
+gem 'faker', '~> 3.0'
+```
+
+The aforementioned faker version is subject to change so please find the official faker gem and github link below for latest version:
+
+Github: [faker docs](https://github.com/faker-ruby/faker)
+
+Rubygems: [faker gem](https://rubygems.org/gems/faker)
+
+<br />
+
+#### Others
+
+##### Swagger::Docs
+
+Swagger::Docs gem generates `swagger-ui` json files for rails apps with APIs to document the working process and behaviour of our `APIs`. We add the swagger DSL to out controller classes and then run one rake task to generate the json files.
+
+This gem can be added to any rails project by either executing the global install command or adding the swagger-docs gem in the gemfile.
+
+To `global install` swagger-docs
+
+```
+gem install swagger-docs
+```
+
+To add the module in the `gemfile`
+
+```
+gem 'swagger-docs', '~> 0.2.9'
+```
+
+The aforementioned swagger-docs version is subject to change so please find the official swagger-docs gem and github link below for latest version:
+
+Github: [swagger-docs docs](https://github.com/richhollis/swagger-docs)
+
+Rubygems: [swagger-docs gem](https://rubygems.org/gems/swagger-docs)
+
+<br />
+
+##### Rswag
+
+Rswag creates swagger tooling and generates beautiful `API documentation` for Rails APIs, including a UI to explore and test operations, directly from your rspec integration tests. It extends rspec-rails "request specs" with a Swagger-based DSL for describing and testing API operations. You describe your API operations with a concise, intuitive syntax, and it automatically runs the tests. Once you have green tests, run a rake task to auto-generate corresponding Swagger files and expose them as YAML or JSON endpoints. Rswag also provides an embedded version of the awesome swagger-ui that's powered by the exposed file. This toolchain makes it seamless to go from integration specs, which you're probably doing in some form already, to living documentation for your API consumers.
+
+This gem can be added to any rails project by either executing the global install command or adding the rswag gem in the gemfile.
+
+To `global install` rswag
+
+```
+gem install rswag
+```
+
+To add the module in the `gemfile`
+
+```
+gem 'rswag', '~> 2.8'
+```
+
+The aforementioned rswag version is subject to change so please find the official rswag gem and github link below for latest version:
+
+Github: [rswag docs](https://github.com/rswag/rswag)
+
+Rubygems: [rswag gem](https://rubygems.org/gems/rswag)
+
+<br />
+
+##### Database Cleaner Adapter for ActiveRecord
+
+Database Cleaner for ActiveRecord is a gem that contains strategies for `cleaning databases` using ActiveRecord. The use case of this gem is to ensure a clean state of database for `testing`. Each strategy is a small amount of code but is code that is usually needed in any ruby app that is testing with a database. For the SQL libraries, the fastest option will be to use `:transaction` as transactions can simply be rolled back. If you wind up needing to use multiple database connections in your tests (i.e. your tests run in a different process than your application) then using this strategy becomes a bit more difficult.
+
+This gem can be added to any rails project by either executing the global install command or adding the database_cleaner-active_record gem in the gemfile.
+
+To `global install` database_cleaner-active_record
+
+```
+gem install database_cleaner-active_record
+```
+
+To add the module in the `gemfile`
+
+```
+gem 'database_cleaner-active_record', '~> 2.0', '>= 2.0.1'
+```
+
+The aforementioned database_cleaner-active_record version is subject to change so please find the official database_cleaner-active_record gem and github link below for latest version:
+
+Github: [database_cleaner-active_record docs](https://github.com/DatabaseCleaner/database_cleaner-active_record)
+
+Rubygems: [database_cleaner-active_record gem](https://rubygems.org/gems/database_cleaner-active_record)
+
+<br />
+
+##### WebMock
+
+WebMock is a library that allows `stubbing` HTTP requests, setting and verifying expectations on HTTP requests in Ruby. It does a lot more than stubbing and setting expectations on HTTP requests such as:
+
+- Matching requests based on method, URI, headers and body
+- Smart matching of the same URIs in different representations (also encoded and non encoded forms)
+- Smart matching of the same headers in different representations.
+- Support for Test::Unit, RSpec and MiniTest
+
+This gem can be added to any rails project by either executing the global install command or adding the webmock gem in the gemfile.
+
+To `global install` webmock
+
+```
+gem install webmock
+```
+
+To add the module in the `gemfile`
+
+```
+gem 'webmock', '~> 3.18', '>= 3.18.1'
+```
+
+The aforementioned webmock version is subject to change so please find the official webmock gem and github link below for latest version:
+
+Github: [webmock docs](https://github.com/bblimke/webmock)
+
+Rubygems: [webmock gem](https://rubygems.org/gems/webmock)
+
+<br />
+
+##### Capybara
+
+Capybara is an integration testing tool for rack based web applications. It helps you test web applications by `simulating` how a real user would interact with your app by enacting `acceptance testing` for the app. It is agnostic about the driver running your tests and comes with Rack::Test and Selenium support built in. WebKit is supported through an external gem.
+
+This gem can be added to any rails project by either executing the global install command or adding the capybara gem in the gemfile.
+
+To `global install` capybara
+
+```
+gem install capybara
+```
+
+To add the module in the `gemfile`
+
+```
+gem 'capybara', '~> 3.38'
+```
+
+The aforementioned capybara version is subject to change so please find the official capybara gem and github link below for latest version:
+
+Github: [capybara docs](https://github.com/teamcapybara/capybara)
+
+Rubygems: [capybara gem](https://rubygems.org/gems/capybara)
+
+<br />
+
+##### Timecop
+
+A gem providing "time travel" and "time freezing" capabilities, making it dead simple to test `time-dependent` code. It provides a unified method to mock `Time.now`, `Date.today`, and `DateTime.now` in a single call. Besides this, it offers a great set of other key benefits such as:
+
+- Scale time by a given scaling factor that will cause time to move at an accelerated pace.
+- No dependencies, can be used with any Ruby and Ruby on Rails projects.
+- Nested calls to `Timecop#travel` and `Timecop#freeze` are supported.
+
+This gem can be added to any rails project by either executing the global install command or adding the timecop gem in the gemfile.
+
+To `global install` timecop
+
+```
+gem install timecop
+```
+
+To add the module in the `gemfile`
+
+```
+gem 'timecop', '~> 0.9.6'
+```
+
+The aforementioned timecop version is subject to change so please find the official timecop gem and github link below for latest version:
+
+Github: [timecop docs](https://github.com/travisjeffery/timecop)
+
+Rubygems: [timecop gem](https://rubygems.org/gems/timecop)
+
+<br />
+
+### Production
+
+#### AWS SDK
+
+The official AWS SDK for Ruby which provides both resource oriented interfaces and API clients for `AWS services`. To set up aws-sdk you will need to configure credentials and a region, either in configuration files or environment variables, to avail API calls. It is recommended that you provide these via your environment. This makes it easier to rotate credentials and it keeps your secrets out of version control. You can also configure default credentials and the region via the `Aws.config` hash. The Aws.config hash takes precedence over environment variables.
+
+This gem can be added to any rails project by either executing the global install command or adding the aws-sdk gem in the gemfile.
+
+To `global install` aws-sdk
+
+```
+gem install aws-sdk
+```
+
+To add the module in the `gemfile`
+
+```
+gem 'aws-sdk', '~> 3.1'
+```
+
+The aforementioned aws-sdk gem version is subject to change so please find the official aws-sdk gem and github link below for latest version:
+
+Github: [aws-sdk docs](https://github.com/aws/aws-sdk-ruby)
+
+Rubygems: [aws-sdk gem](https://rubygems.org/gems/aws-sdk)
+
+<br />
+
+#### Active Model Serializers
+
+ActiveModel::Serializers allows you to generate your JSON in an object-oriented and convention-driven manner which brings convention over configuration to your JSON generation. It works through two components: serializers and adapters. Serializers describe which attributes and relationships should be serialized while adapters describe how attributes and relationships should be serialized. The easiest way to create a new serializer is to generate a new resource, which will generate a serializer at the same time.
+
+This gem can be added to any rails project by either executing the global install command or adding the active_model_serializers gem in the gemfile.
+
+To `global install` active_model_serializers
+
+```
+gem install active_model_serializers
+```
+
+To add the module in the `gemfile`
+
+```
+gem 'active_model_serializers', '~> 0.10.13'
+```
+
+The aforementioned active_model_serializers version is subject to change so please find the official active_model_serializers gem and github link below for latest version:
+
+Github: [active_model_serializers docs](https://github.com/rails-api/active_model_serializers)
+
+Rubygems: [active_model_serializers gem](https://rubygems.org/gems/active_model_serializers)
+
+<br />
+
+#### Action Cable
+
+Action Cable seamlessly integrates `WebSockets` with the rest of our rails application to structure many real-time application concerns into channels over a single websocket connection. It allows for real-time features to be written in ruby in the same style and form as the rest of our application, while still being performant and scalable. It's a full-stack offering that provides both a client-side JavaScript framework and a server-side Ruby framework. You have access to your entire domain model written with Active Record or your ORM of choice.
+
+This gem can be added to any rails project by either executing the global install command or adding the actioncable gem in the gemfile.
+
+To `global install` actioncable
+
+```
+gem install actioncable
+```
+
+To add the module in the `gemfile`
+
+```
+gem 'actioncable', '~> 7.0', '>= 7.0.4'
+```
+
+The aforementioned actioncable version is subject to change so please find the official actioncable gem and github link below for latest version:
+
+Official Documentation: [actioncable docs](https://guides.rubyonrails.org/action_cable_overview.html)
+
+Rubygems: [actioncable gem](https://rubygems.org/gems/actioncable)
+
+<br />
+
+#### Rails Admin
+
+Rails Admin is a rails engine that provides an easy-to-use interface to manage your data. It offers a great set of features, enlisted below, in order to integrate your data aided by the simple interface it avails:
+
+ - CRUD any data with ease and enable search and filtering actions
+ - Perform custom actions and allow automatic form validation
+ - Export data to CSV/JSON/XML
+ - Authentication made available via [Devise](https://github.com/heartcombo/devise) or other and Authorization via [CanCanCan](https://github.com/CanCanCommunity/cancancan) or [Pundit](https://github.com/varvet/pundit)
+ - View user action history via [PaperTrail](https://github.com/paper-trail-gem/paper_trail)
+ - Supports ORMs such as ActiveRecord and Mongoid
+
+This gem can be added to any rails project by either executing the global install command or adding the rails_admin gem in the gemfile.
+
+To `global install` rails_admin
+
+```
+gem install rails_admin
+```
+
+To add the module in the `gemfile`
+
+```
+gem 'rails_admin', '~> 3.1', '>= 3.1.1'
+```
+
+The aforementioned rails_admin version is subject to change so please find the official rails_admin gem and github link below for latest version:
+
+Official Documentation: [rails_admin docs](https://github.com/railsadminteam/rails_admin)
+
+Rubygems: [rails_admin gem](https://rubygems.org/gems/rails_admin)
+
+<br />
+
+#### Database Backend
+
+##### Pg
+
+Pg is the Ruby interface to the `PostgreSQL` RDBMS client library. It works with PostgreSQL 9.3 and later. It usually works with earlier versions of Ruby/PostgreSQL as well, but those are not regularly tested. PostgreSQL is a powerful, open source object-relational database system with over decades of active development that has earned it a strong reputation for reliability, feature robustness, and performance.
+
+This gem can be added to any rails project by either executing the global install command or adding the pg gem in the gemfile.
+
+To `global install` pg
+
+```
+gem install pg
+```
+
+To add the module in the `gemfile`
+
+```
+gem 'pg', '~> 1.4', '>= 1.4.5'
+```
+
+The aforementioned pg version is subject to change so please find the official pg gem and github link below for latest version:
+
+Github: [pg docs](https://github.com/ged/ruby-pg)
+
+Rubygems: [pg gem](https://rubygems.org/gems/pg)
+
+<br />
+
+##### MySQL2
+
+The Mysql2 gem is a modern, simple & fast Mysql library for Ruby which is meant to serve the extremely common use-case of connecting, querying and iterating on results. Some database libraries available out there serve as direct one-on-one mappings of the already complex C APIs available while this one is not. It also forces the use of UTF-8 (or binary) for the connection and uses encoding-aware MySQL API calls where it can.
+
+Mysql2 links against MySQL's `libmysqlclient` library or `Connector/C` library, and compatible alternatives such as `MariaDB`. So, you may need to install a package such as `libmariadb-dev`, `libmysqlclient-dev`, `mysql-devel`, or other appropriate package for your system. For system-specific instructions, you may need to visit the Github link given below.
+
+This gem can be added to any rails project by either executing the global install command or adding the mysql2 gem in the gemfile.
+
+To `global install` mysql2
+
+```
+gem install mysql2
+```
+
+To add the module in the `gemfile`
+
+```
+gem 'mysql2', '~> 0.5.4'
+```
+
+The aforementioned mysql2 version is subject to change so please find the official mysql2 gem and github link below for latest version:
+
+Github: [mysql2 docs](https://github.com/brianmario/mysql2)
+
+Rubygems: [mysql2 gem](https://rubygems.org/gems/mysql2)
+
+<br />
+
+#### Redis
+
+Redis is a ruby client that tries to match Redis' API one-to-one, while still providing an idiomatic interface. Redis is an `in-memory` data structure store used to help building high-performance and scalable web applications, similar to [Memcached](https://memcached.org/), but with two main differences:
+
+- Redis can persist data to disk, making it a kind of NoSQL database, so data won't disappear when restarting the server.
+- Redis can store more data types besides strings, such as Hashes, Lists, Sets and Sorted Sets.
+
+The persistence capability is intriguing, however if there is a power outage and Redis didn't have time to persist the latest data, some applications may be impacted. Another intriguing aspect is that it may append each command to a log in these circumstances.
+
+Redis may therefore apply all the commands across the data to return to the most recent state in the event of a failure after resuming. Redis can be used as a message-queue broker, database, or `caching` system. In a server group, it can also be used with primary-secondary asynchronous replication.
+
+This gem can be added to any rails project by either executing the global install command or adding the redis-rb gem in the gemfile.
+
+To `global install` redis-rb
+
+```
+gem install redis
+```
+
+To add the module in the `gemfile`
+
+```
+gem 'redis', '~> 5.0', '>= 5.0.5'
+```
+
+The aforementioned redis-rb version is subject to change so please find the official redis-rb gem and github link below for latest version:
+
+Github: [redis-rb docs](https://github.com/redis/redis-rb)
+
+Rubygems: [redis-rb gem](https://rubygems.org/gems/redis)
+
+<br />
+
+#### Authentication & Authorization
+
+#### Devise
+
+Devise is a flexible authentication module for Rails with Warden. It is a rack based MVC solution composed of multiple modules which can be signed into or added to our projects based on the use cases.
+
+Devise can be added to any project by either executing the global install command or adding the devise gem in the gemfile.
+
+To `global install` devise
+
+```
+gem install devise
+```
+
+To add the module in the `gemfile`
+
+```
+gem 'devise', '~> 4.8', '>= 4.8.1'
+```
+
+The aforementioned devise version is subject to change so please find the official devise gem and github link below for latest version:
+
+Github: [devise docs](https://github.com/heartcombo/devise)
+
+Rubygems: [devise gem](https://rubygems.org/gems/devise)
+
+<br />
+
+#### Devise::JWT
+
+Devise::JWT is the devise extension which uses `JWT` tokens for user authentication with configurable token revocation strategies.
+
+This gem can also be added to any rails project by either executing the global install command or adding the devise gem in the gemfile.
+
+To `global install` devise
+
+```
+gem install devise-jwt
+```
+
+To add the module in the `gemfile`
+
+```
+gem 'devise-jwt', '~> 0.10.0'
+```
+
+The aforementioned devise-jwt version is subject to change so please find the official devise-jwt gem and github link below for latest version:
+
+Github: [devise-jwt docs](https://github.com/waiting-for-dev/devise-jwt)
+
+Rubygems: [devise-jwt gem](https://rubygems.org/gems/devise-jwt)
+
+<br />
+
+#### Pundit
+
+When it comes to building an object oriented `authorization` for Rails applications, Pundit offers a set of helpers which guide you in leveraging regular Ruby classes and object oriented design patterns to build a robust and scalable authorization system.
+
+This gem can be added to any rails project by either executing the global install command or adding the pundit gem in the gemfile.
+
+To `global install` pundit
+
+```
+gem install pundit
+```
+
+To add the module in the `gemfile`
+
+```
+gem 'pundit', '~> 2.2'
+```
+
+The aforementioned pundit version is subject to change so please find the official pundit gem and github link below for latest version:
+
+Github: [pundit docs](https://github.com/varvet/pundit)
+
+Rubygems: [pundit gem](https://rubygems.org/gems/pundit)
+
+<br />
+
+#### Doorkeeper
+
+Doorkeeper is a rails engine that makes it easy to introduce `OAuth 2` provider functionality to your Ruby on Rails or Grape application. The OAuth 2.0 authorization framework enables a third-party application to obtain limited access to an HTTP service, either on behalf of a resource owner by setting up an approval interaction between the resource owner and the HTTP service, or by allowing the third-party application to obtain access on its own behalf.
+
+This gem can be added to any rails project by either executing the global install command or adding the doorkeeper gem in the gemfile.
+
+To `global install` doorkeeper
+
+```
+gem install doorkeeper
+```
+
+To add the module in the `gemfile`
+
+```
+gem 'doorkeeper', '~> 5.6', '>= 5.6.2'
+```
+
+The aforementioned doorkeeper version is subject to change so please find the official doorkeeper gem and github link below for latest version:
+
+Github: [doorkeeper docs](https://github.com/doorkeeper-gem/doorkeeper)
+
+Rubygems: [doorkeeper gem](https://rubygems.org/gems/doorkeeper)
+
+<br />
+
+#### CanCanCan
+
+CanCanCan is a simple authorization solution for Rails which puts a constraint on what resources a given user is allowed to access. The permissions can be defined in one or multiple ability files and is not duplicated across controllers, views, and database queries, keeping the permissions logic in one place for easy maintenance and testing.
+
+This gem can be added to any rails project by either executing the global install command or adding the cancancan gem in the gemfile.
+
+To `global install` cancancan
+
+```
+gem install cancancan
+```
+
+To add the module in the `gemfile`
+
+```
+gem 'cancancan', '~> 3.4'
+```
+
+The aforementioned cancancan version is subject to change so please find the official cancancan gem and github link below for latest version:
+
+Github: [cancancan docs](https://github.com/CanCanCommunity/cancancan)
+
+Rubygems: [cancancan gem](https://rubygems.org/gems/cancancan)
+
+<br />
+
+#### User Interface (UI)
+
+##### Font Awesome Rails
+
+Font Awesome Rails provides the [Font-Awesome](https://fontawesome.com/) web `fonts and stylesheets` as a Rails engine for use with the asset pipeline. When building a Rails engine that needs font-awesome-rails as a dependency, be sure to require "font-awesome-rails" somewhere during the initialization of your engine otherwise, rails won't automatically pick up the load path of the font-awesome-rails assets and helpers.
+
+This gem can be added to any rails project by either executing the global install command or adding the font-awesome-rails gem in the gemfile.
+
+To `global install` font-awesome-rails
+
+```
+gem install font-awesome-rails
+```
+
+To add the module in the `gemfile`
+
+```
+gem 'font-awesome-rails', '~> 4.7', '>= 4.7.0.8'
+```
+
+The aforementioned font-awesome-rails version is subject to change so please find the official font-awesome-rails gem and github link below for latest version:
+
+Github: [font-awesome-rails docs](https://github.com/bokmann/font-awesome-rails)
+
+Rubygems: [font-awesome-rails gem](https://rubygems.org/gems/font-awesome-rails)
+
+<br />
+
+##### Bootstrap
+
+Bootstrap is a rubygem for Rails, Sprockets, Hanami, etc. It is the most popular HTML, CSS, and JavaScript framework for developing responsive, mobile first projects on the web. If you have just generated a new rails app, it may come with a `.css` file so ensure that the file has `.scss` extension (or `.sass` for Sass syntax). If `.css` file exists, it will be served instead of Sass, so you might want to rename it. Then, remove all the `*= require` and `*= require_tree` statements from the Sass file and use `@import` to import Sass files instead.
+
+> Do not use `*= require` in Sass or your other stylesheets will not be able to access the Bootstrap mixins and variables.
+
+This gem can be added to any rails project by either executing the global install command or adding the bootstrap gem in the gemfile.
+
+To `global install` bootstrap
+
+```
+gem install bootstrap
+```
+
+To add the module in the `gemfile`
+
+```
+gem 'bootstrap', '~> 5.2', '>= 5.2.3'
+```
+
+The aforementioned bootstrap version is subject to change so please find the official bootstrap gem and github link below for latest version:
+
+Github: [bootstrap docs](https://github.com/twbs/bootstrap-rubygem)
+
+Rubygems: [bootstrap gem](https://rubygems.org/gems/bootstrap)
+
+<br />
+
+#### Email
+
+##### SendGrid Ruby
+
+SendGrid Ruby library allows us to quickly and easily interact with Twilio SendGrid Web API in native Ruby. SendGrid is an awesome `email` deliverability service that helps you send large amounts of email without spending large sum of money. It allows for painless integration between ActionMailer and the SendGrid SMTP API. The current scope of this gem is focused around setting configuration options for outgoing email (essentially, setting categories, filters and the settings that can accompany those filters). SendGrid's service allows for some other cool stuff (such as postback notification of unsubscribes, bounces, etc.), but those features are currently outside the scope of this gem.
+
+This gem can be added to any rails project by either executing the global install command or adding the sendgrid-ruby gem in the gemfile.
+
+To `global install` sendgrid-ruby
+
+```
+gem install sendgrid-ruby
+```
+
+To add the module in the `gemfile`
+
+```
+gem 'sendgrid-ruby', '~> 6.6', '>= 6.6.2'
+```
+
+The aforementioned sendgrid-ruby version is subject to change so please find the official sendgrid-ruby gem and github link below for latest version:
+
+Github: [sendgrid-ruby docs](https://github.com/sendgrid/sendgrid-ruby)
+
+Rubygems: [sendgrid-ruby gem](https://rubygems.org/gems/sendgrid-ruby)
+
+<br />
+
+### Deployment
+
+#### Capistrano
+
+Capistrano is a utility and framework for building `automated deployment` scripts and executing commands in parallel on multiple remote machines, via SSH. Although Capistrano itself is written in Ruby, it can easily be used to deploy projects of any language or framework, be it a Rails, Java, or PHP project.
+
+This gem can be added to any rails project by either executing the global install command or adding the capistrano gem in the gemfile.
+
+To `global install` capistrano
+
+```
+gem install capistrano
+```
+
+To add the module in the `gemfile`
+
+```
+gem 'capistrano', '~> 3.17', '>= 3.17.1'
+```
+
+The aforementioned capistrano version is subject to change so please find the official capistrano gem and github link below for latest version:
+
+Github: [capistrano docs](https://github.com/capistrano/capistrano)
+
+Rubygems: [capistrano gem](https://rubygems.org/gems/capistrano)
+
+<br />
