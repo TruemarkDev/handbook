@@ -338,7 +338,49 @@ Merge Conflicts in
 
 ## Merge Requests Guidelines
 
-Everything you need to know about creating a merge request and everything that follows afterwards.
+Whenever we complete our task or certain portion of the task, we create a merge request for those changes which we made. So, the merge request should be informative about the overall work done in the project. This will help other team members to get insights into your work and helps reviewer to review the code according to the scope of the work done. Creating an informative merge request also helps to keep the history of the tasks done during the development of the project by certain developer. This will be more effective and easy to follow if there is certain standard while creating the merge request. So, here at Truemark, we do follow standard while creating merge requests and now let's look into the convention of creating a merge request while following our standard.
+
+### Merge Requests Convention
+
+[**Trello/Jira Card Link**](/docs/guidelines/git#trello/jira-card-link)
+
+- Link to the project management tool (Trello/Jira) card.
+
+[**Tasks Completed**](/docs/guidelines/git#tasks-completed)
+
+- List of tasks done for particular feature or bug fix in the project.
+
+[**Remaining Tasks**](/docs/guidelines/git#remaining-tasks)
+
+- List of remaining tasks to be done for feature or bug fix.
+
+[**Steps To Test Features**](/docs/guidelines/git#steps-to-test-features)
+
+- Stepwise walk through to test the certain implemented feature in the project.
+
+[**Screenshots/Video**](/docs/guidelines/git#screenshots/videos)
+
+- Screenshots to show the UI change in the project or video attachment to show the walk through of the feature implemented.
+
+#### Trello/Jira Card Link
+
+We include the project management tool's card link assigned for certain feature or bug fix at first while creating the merge request. Including Trello/Jira card link in the merge request allows team members and project manager to look at the task developer is working on which can make team effective and efficient while assigning task to the certain developer in the coming days.
+
+#### Tasks Completed
+
+This is the second section we should have in our merge requests. This section should include the list of tasks the developer has worked on while integrating certain feature or working on some bug fix in the project.
+
+#### Remaining Tasks
+
+We always can not create a merge request after completing the whole task as we should send our code for review to the senior developers. So, there might be some tasks which contains other sub-tasks that are yet to be completed. Therefore, these remaining sub-tasks are included in the third section while creating the merge request inside of the Remaining Tasks section.
+
+#### Steps To Test Features
+
+This should be included only when working on the frontend part of the application as this section should contain stepwise description to test the certain feature which is implemented. This basically should contain the descriptive feature walk through so it can be easier for the tester to test the feature correctly.
+
+#### Screenshots/Videos
+
+This section is also only included when creating merge request for frontend changes as this should include the UI changes done as screenshots and video attachment can be used to walk through the feature implemented while performing the task.
 
 ### Creating a merge request
 
