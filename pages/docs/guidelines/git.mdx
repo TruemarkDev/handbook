@@ -382,9 +382,142 @@ This should be included only when working on the frontend part of the applicatio
 
 This section is also only included when creating merge request for frontend changes as this should include the UI changes done as screenshots and video attachment can be used to walk through the feature implemented while performing the task.
 
-### Creating a merge request
+### Creating A Merge Request
 
-When you are creating any new merge request, this is a template we prefer at Truemark because this gives the basic overview to the reviewer of what they are going to review in your merge request.
+Now, as we have looked at the convention while creating the merge request, lets take a look at creating one of those. There is different convention for creating merge request for frontend and backend task.
+
+#### Merge request for backend
+
+Here is the overview of the Markdown (MD) format we should have for backend merge request.
+
+```md
+Trello/Jira Card Link
+
+- Link to the project management tool's card link for certain task.
+- Another link for the task's card if task is divided into multiple cards.
+
+Tasks Completed
+
+- Brief about the task 1 done.
+- Brief about the task 2 done.
+- Brief about the task 3 done.
+- and so on...
+
+Remaining Tasks
+
+- Brief about the remaining task 1.
+- Brief about the remaining task 2.
+- and so on...
+```
+
+Lets see an example for the merge request.
+
+```
+Trello/Jira Card Link
+
+- https://trello.com/c/DcXinxqG/1385-customer-should-be-able-to-upload-profile-picture
+
+Tasks Completed
+
+- Added functionality and created an API to upload the profile image
+- Added functionality and created an API to view the profile image
+- Added functionality and created an API to update the profile image
+- Added functionality and created an API to remove the profile image
+- Added functionality to make the profile image dimension of 125x125 and 250x250.
+
+Remaining Tasks
+
+- Add validation for restricting user to upload image below 5MB.
+- Add validation to accept the image in either png or svg format only.
+```
+
+#### Merge request for frontend
+
+Here is the overview of the Markdown (MD) format we should have for backend merge request.
+
+```md
+Trello/Jira Card Link
+
+- Link to the project management tool's card link for certain task.
+- Another link for the task's card if task is divided into multiple cards.
+
+Tasks Completed
+
+- Brief about the task 1 done.
+- Brief about the task 2 done.
+- and so on...
+
+Remaining Tasks
+
+- Brief about the remaining task 1.
+- Brief about the remaining task 2.
+- and so on...
+
+Steps To Test Features
+
+- Step 1 to test feature X
+- Step 2 to test feature X
+- Step 3 to test feature X
+- and so on...
+
+Screenshots/Video
+
+- Description about the UI change 1
+
+  - Screenshot/Video for the UI change
+
+- Description about the UI change 2
+
+  - Screenshot/Video for the UI change 3
+
+- Description about the UI change 4
+
+  - Screenshot/Video for the UI change
+```
+
+Lets see an example for the merge request.
+
+```md
+Trello/Jira Link
+
+- https://trello.com/c/462gWRAG/1070-updates-in-side-menu-bar-in-ecommerce-app
+
+Tasks Completed
+
+- Added header section in the sidebar which contains logo of the application.
+- Changed the home icon according to the design.
+- Added left chevron icon in the sidebar.
+- Added different links to navigate into different parts of the application.
+
+Remaining Tasks
+
+- Add functionality to close the sidebar when chevron icon is clicked.
+- Add sub-menu and implement the design and animation as required while revealing the items in sub-menu.
+- Design the links present in the sidebar and add relevant route to them.
+- Refactor the code to meet the coding standards followed.
+
+Steps To Test Features
+
+- Go to the dashboard page by visiting /home/dashboard url.
+- You will see the right chevron icon in the navigation bar of the application.
+- Click on the right chevron icon.
+- Sidebar will be revealed.
+- You will see the new home icon and various links for the application.
+
+Screenshots/Video
+
+- UI change in the sidebar and home icon
+
+  - Relevant screenshot/video
+
+- Mobile view of the sidebar
+
+  - Relevant screenshot/video
+
+- Desktop view of the sidebar
+
+  - Relevant screenshot/video
+```
 
 #### MD Format
 
