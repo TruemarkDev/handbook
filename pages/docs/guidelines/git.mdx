@@ -519,6 +519,58 @@ Screenshots/Video
   - Relevant screenshot/video
 ```
 
+### Types Of Merge Requests
+
+There can be different scenarios while creating a merge request for a certain PR. There can be situation when tasks are remained to complete or all tasks have been completed and for each situation, there can be different merge request. Now, lets take a look at the types of merge requests relying upon the task done.
+
+#### Merge Request In Work In Progress (WIP) State
+
+The merge request can contain some tasks which are remained to be done. This state of merge request is also often called as WIP state where certain portion of the tasks are completed but there are still some remaining task to be done. This section adds new section as `Remaining Tasks` in the merge request Markdown(MD) that contains the list of remaining task to be done as will as the title while creating the merge request should start with `WIP` keyword. Overview of the MD format for merge request in WIP state is given below:
+
+```md
+Trello/Jira Card Link
+
+- Link to the project management tool's card link for certain task.
+
+Tasks Completed
+
+- List of tasks done
+
+Remaining Tasks
+
+- List of remaining tasks to be done
+
+Steps To Test Features
+
+- Stepwise walkthrough of the feature implemented (for frontend)
+
+Screenshots/Video
+
+- Description and screenshot/video of the UI changes (for frontend)
+```
+
+#### Completed Merge Request
+
+In this type of merge request, all works are completed and the feature or certain functionality is working correctly. We basically omit the `Remaining Task` section in this type of merge request while creating Markdown (MD) for it. It covers all the tasks that are completed and adds steps to test features and screenshots/videos walk through of the feature if the changes are made in the frontend part of the application. Overview of the MD format for completed merge request is given below:
+
+```md
+Trello/Jira Card Link
+
+- Link to the project management tool's card link for certain task.
+
+Tasks Completed
+
+- List of tasks done
+
+Steps To Test Features
+
+- Stepwise walkthrough of the feature implemented (for frontend)
+
+Screenshots/Video
+
+- Description and screenshot/video of the UI changes (for frontend)
+```
+
 #### MD Format
 
 ```md
