@@ -245,34 +245,6 @@ Rubygems: [faker gem](https://rubygems.org/gems/faker)
 
 <br />
 
-#### API Documentation
-
-##### Rswag
-
-Rswag creates swagger tooling and generates beautiful `API documentation` for Rails APIs, including a UI to explore and test operations, directly from your rspec integration tests. It extends rspec-rails "request specs" with a Swagger-based DSL for describing and testing API operations. You describe your API operations with a concise, intuitive syntax, and it automatically runs the tests. Once you have green tests, run a rake task to auto-generate corresponding Swagger files and expose them as YAML or JSON endpoints. Rswag also provides an embedded version of the awesome swagger-ui that's powered by the exposed file. This toolchain makes it seamless to go from integration specs, which you're probably doing in some form already, to living documentation for your API consumers.
-
-This gem can be added to any rails project by either executing the global install command or adding the rswag gem in the gemfile.
-
-To `global install` rswag
-
-```
-gem install rswag
-```
-
-To add the module in the `gemfile`
-
-```
-gem 'rswag', '~> 2.8'
-```
-
-The aforementioned rswag version is subject to change so please find the official rswag gem and github link below for latest version:
-
-Github: [rswag docs](https://github.com/rswag/rswag)
-
-Rubygems: [rswag gem](https://rubygems.org/gems/rswag)
-
-<br />
-
 #### Others
 
 ##### Database Cleaner Adapter for ActiveRecord
@@ -1160,6 +1132,123 @@ Please find the official sentry-ruby gem and github link below for latest versio
 Github: [sentry-ruby docs](https://github.com/getsentry/sentry-ruby)
 
 Rubygems: [sentry-ruby gem](https://rubygems.org/gems/sentry-ruby)
+
+<br />
+
+##### Honeybadger Ruby
+
+Honeybadger Ruby is an error monitoring service that helps developers fix ruby errors in record time and bridges the gap with uptime, cron, and heartbeat monitoring. Honeybadger posts the relevant data to the Honeybadger server specified in your environment, for every time an uncaught exception occurs in your application. It is an incident management-all in one simple platform which combines three types of monitoring in order to streamline your production stack: 
+- Error Tracking: Alleviates your users when you are proactively tracking your application and fixing issues early
+- Uptime Monitoring: Notifies you on time when your application is down or is regressing due to external issues
+- Cron & Heartbeat Monitoring: Gets you relevant feedbacks to know when your cron jobs and services fail silently or have gone missing
+
+This gem can be added to any rails project by either executing the global install command or adding the honeybadger gem in the gemfile.
+
+To `global install` honeybadger
+
+```
+gem install honeybadger
+```
+
+To add the module in the `gemfile`
+
+```
+gem 'honeybadger', '~> 5.2', '>= 5.2.1'
+```
+
+The aforementioned honeybadger version is subject to change so please find the official honeybadger gem and github link below for latest changes:
+
+Github: [honeybadger docs](https://github.com/honeybadger-io/honeybadger-ruby)
+
+Rubygems: [honeybadger gem](https://rubygems.org/gems/honeybadger)
+
+<br />
+
+##### Bugsnag Ruby
+
+Bugsnag Ruby is an another error monitoring and `exception reporter` for Ruby which triggers an instant notification of exceptions thrown from the rails application to be sent to the developers. It reports the handled exceptions along with `unhandled crashes` and attaches the user information to ascertain the number of users affected by the crash. It traces the events leading up to a crash to help you understand the root cause of ruby errors and then dispatches a customized diagnostic data to get your team down to work.
+
+This gem can be added to any rails project by either executing the global install command or adding the bugsnag gem in the gemfile.
+
+To `global install` bugsnag
+
+```
+gem install bugsnag
+```
+
+To add the module in the `gemfile`
+
+```
+gem 'bugsnag', '~> 6.25', '>= 6.25.2'
+```
+
+The aforementioned bugsnag version is subject to change so please find the official bugsnag gem and github link below for latest changes:
+
+Github: [bugsnag docs](https://github.com/bugsnag/bugsnag-ruby)
+
+Rubygems: [bugsnag gem](https://rubygems.org/gems/bugsnag)
+
+<br />
+
+##### Rollbar
+
+Rollbar is a yet another real-time exception reporting platform for Ruby and other languages. One can track and debug errors in their ruby applications with ease using Rollbar. The Rollbar intuitive interface and advanced error monitoring service alerts you of problems with your code to ensure the stability and reliability of your application. It also offers several other key benefits as follows:
+
+- Frameworks: This gem has support for popular Ruby frameworks such as Rails, Sinatra, Grape and more.
+- Integrations: Rollbar Ruby has integrations for Resque, ActiveJob, rollbar-agent, Sidekiq and more.
+- Automatic error grouping: Rollbar [groups similar occurrences](https://docs.rollbar.com/docs/grouping-occurrences) of an error into items that depict as application issues.
+- Advanced search: [Filter](https://docs.rollbar.com/docs/search-items) items using distinct attributes available.
+- Personalized notifications: Rollbar notifies about events by posting [real-time alerts](https://docs.rollbar.com/docs/notifications) via several messaging and incident management tools that can be configured by your team members.
+
+This gem can be added to any rails project by either executing the global install command or adding the rollbar gem in the gemfile.
+
+To `global install` rollbar
+
+```
+gem install rollbar
+```
+
+To add the module in the `gemfile`
+
+```
+gem 'rollbar', '~> 3.4'
+```
+
+The aforementioned rollbar version is subject to change so please find the official rollbar gem and github link below for latest changes:
+
+Github: [rollbar docs](https://github.com/rollbar/rollbar-gem)
+
+Rubygems: [rollbar gem](https://rubygems.org/gems/rollbar)
+
+<br />
+
+### Test & Production
+
+#### Rswag
+
+Rswag creates swagger tooling and generates beautiful `API documentation` for Rails APIs, including a UI to explore and test operations, directly from your rspec integration tests. It extends rspec-rails "request specs" with a Swagger-based DSL for describing and testing API operations. You describe your API operations with a concise, intuitive syntax, and it automatically runs the tests. Once you have green tests, run a rake task to auto-generate corresponding Swagger files and expose them as YAML or JSON endpoints. Rswag also provides an embedded version of the awesome swagger-ui that's powered by the exposed file. This toolchain makes it seamless to go from integration specs, which you're probably doing in some form already, to living documentation for your API consumers.
+
+This gem can be added to any rails project by either executing the global install command or adding the rswag gem in the gemfile.
+
+To `global install` rswag
+
+```
+gem install rswag
+```
+
+To add the module in the `gemfile`
+
+```
+gem 'rswag', '~> 2.8'
+```
+
+The aforementioned rswag version is subject to change so please find the official rswag gem and github link below for latest version:
+
+Github: [rswag docs](https://github.com/rswag/rswag)
+
+Rubygems: [rswag gem](https://rubygems.org/gems/rswag)
+
+<br />
 
 ### Deployment
 
