@@ -7,7 +7,7 @@ module.exports = {
         description:
           "Handbook is a living document guiding our team members to work together and fulfill our mission.",
         siteUrl: "https://handbook.truemark.dev",
-        sections: ["Handbook", "Company", "Benefits", "Guidelines"],
+        sections: ["Handbook", "Company", "Benefits", "Guidelines", "Project Management"],
       },
     },
     {
